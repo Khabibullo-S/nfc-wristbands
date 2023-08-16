@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import img1 from '../assets/img/wristband-trio.png'
 import Carousel from "react-bootstrap/Carousel";
 import "../assets/css/home.css";
 import Question from "../component/question";
@@ -241,8 +242,8 @@ const Home = () => {
                   {funcType == "team" ? (
                       <div className="func-right">
                         <img
-                            src={require("../assets/img/wristband-trio.png")}
-                            alt=""
+                            src={img1}
+                            alt="img1"
                         />
                       </div>
                   ) : (

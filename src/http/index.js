@@ -3,10 +3,12 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {logOut} from "./userAPI";
 const $host = axios.create({
-    baseURL: 'http://127.0.0.1:8000'
+    // baseURL: 'http://127.0.0.1:8000'
+    baseURL: 'https://nfcglobaltech.uz/'
 })
 const $authHost = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: 'https://nfcglobaltech.uz/',
+    // baseURL: 'http://127.0.0.1:8000',
 })
 
 $authHost.interceptors.request.use(

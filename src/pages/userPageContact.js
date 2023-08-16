@@ -1040,6 +1040,8 @@ const UserPageContact = (comingProps) => {
                                     <div className="truncate">{window.location.href}</div>
                                 </div>
                                 <div style={{ color: copied ? "green" : "black" }}>
+                                    {data.first_name && data.first_name[0]}
+                                    {data.last_name && data.last_name[0]}
                                     {copied ? <>Copied!</> : <>Copy</>}
                                 </div>
                             </div>
