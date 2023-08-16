@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.31316b6f.css",
-    "main.js": "/static/js/main.210d8bff.js",
-    "static/media/wristband-trio.png": "/static/media/wristband-trio.6b43c5a85e0e6e0ea2b0.png",
-    "static/media/wristband-duo.png": "/static/media/wristband-duo.5b263bc4749b400eed83.png",
-    "static/media/wristband-reverse.png": "/static/media/wristband-reverse.c76f7c3b929129e839c5.png",
-    "static/media/wristband.png": "/static/media/wristband.43d17f0c4cb929c14127.png",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "main.css": "css/main.31316b6f.css",
+    "main.js": "js/main.210d8bff.js",
+    "media/wristband-trio.png": "media/wristband-trio.6b43c5a85e0e6e0ea2b0.png",
+    "media/wristband-duo.png": "media/wristband-duo.5b263bc4749b400eed83.png",
+    "media/wristband-reverse.png": "media/wristband-reverse.c76f7c3b929129e839c5.png",
+    "media/wristband.png": "media/wristband.43d17f0c4cb929c14127.png",
+    "media/slick.svg": "media/slick.2630a3e3eab21c607e21.svg",
+    "media/slick.eot": "media/slick.a4e97f5a2a64f0ab1323.eot",
+    "media/slick.ttf": "media/slick.c94f7671dcc99dce43e2.ttf",
+    "media/slick.woff": "media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.31316b6f.css.map": "/static/css/main.31316b6f.css.map",
-    "main.210d8bff.js.map": "/static/js/main.210d8bff.js.map"
+    "main.31316b6f.css.map": "css/main.31316b6f.css.map",
+    "main.210d8bff.js.map": "js/main.210d8bff.js.map"
   },
   "entrypoints": [
-    "static/css/main.31316b6f.css",
-    "static/js/main.210d8bff.js"
+    "css/main.31316b6f.css",
+    "js/main.210d8bff.js"
   ]
 }
