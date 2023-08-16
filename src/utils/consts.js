@@ -6,7 +6,7 @@ export const REGISTRATION_ROUTE = '/registration';
 
 
 //dashboard route
-export const ADMIN_ROUTE = "/admin";
+export const ADMIN_ROUTE = "/cabinet";
 export const LAYOUT = '/layout';
 
 //user route
