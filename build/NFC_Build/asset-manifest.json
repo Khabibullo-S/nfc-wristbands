@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "css/main.0692728c.css",
-    "main.js": "js/main.2a35443b.js",
+    "main.js": "js/main.12c5e68a.js",
     "media/wristband-trio.png": "media/wristband-trio.6b43c5a85e0e6e0ea2b0.png",
     "media/wristband-duo.png": "media/wristband-duo.5b263bc4749b400eed83.png",
     "media/wristband-reverse.png": "media/wristband-reverse.c76f7c3b929129e839c5.png",
@@ -12,10 +12,10 @@
     "media/slick.woff": "media/slick.295183786cd8a1389865.woff",
     "index.html": "index.html",
     "main.0692728c.css.map": "css/main.0692728c.css.map",
-    "main.2a35443b.js.map": "js/main.2a35443b.js.map"
+    "main.12c5e68a.js.map": "js/main.12c5e68a.js.map"
   },
   "entrypoints": [
     "css/main.0692728c.css",
-    "js/main.2a35443b.js"
+    "js/main.12c5e68a.js"
   ]
 }

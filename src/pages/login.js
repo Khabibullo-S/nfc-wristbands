@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {login} from "../http/userAPI";
-import {ADMIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE, LOGIN_ROUTE, PROFILE_USER, REGISTRATION_ROUTE} from "../utils/consts";
 import {Link, useNavigate} from "react-router-dom";
 import {Button, Col, Form, Row} from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -40,8 +40,9 @@ const Login = () => {
                 ).toString();
                 localStorage.setItem('user',encryptedUserData);
                 if (data.user.type === "POLYGRAPHY"){
-                    window.location.assign('cabinet/getOrders')
-                }else { window.location.assign('cabinet/Profile')}
+                    window.location.assign('/cabinet/getOrders')
+                }else { window.location.assign('/cabinet')}
+
 
             }catch (e) {
                 messageApi.open({
