@@ -85,7 +85,7 @@ const CompanyProfile = () => {
 
     }
     return (
-        <div style={{marginLeft:'21px', marginRight:"21px"}}>
+        <div >
             {contextHolder}
 
             <Container>

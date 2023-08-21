@@ -3,6 +3,7 @@ import { Routes, Route,Navigate} from "react-router-dom";
 import {adminDash, publicRoute} from "../routs";
 import {observer} from "mobx-react-lite";
 import UserPageContact from "../pages/userPageContact";
+import Sidebar from "../pages/admin/sidebar";
 
 const AppRout = observer(() => {
         const local = localStorage.getItem('token');
@@ -16,7 +17,6 @@ const AppRout = observer(() => {
 
 
                     <Route  exact path={`/:username`} element={<UserPageContact/>} />
-
                 <Route
                     path="*"
                     element={<Navigate to="/" replace />}

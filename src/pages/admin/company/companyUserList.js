@@ -184,13 +184,13 @@ const CompanyUserList = () => {
         }else {
             try {
                 const res = await $authHost.put("api/v1/users/"+updateID+"/", dataIndex)
-                console.log(dataIndex)
+                console.log()
                 messageApi.open({
                     type: 'success',
                     content: res.data.username +" update",
                 })
                 setTimeout(()=>{
-                    return window.location.reload()
+                    // return window.location.reload()
 
                 },2000)
             }catch (e) {

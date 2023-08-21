@@ -24,8 +24,6 @@ const UserPageContact = (comingProps) => {
     const props = comingProps.data;
     const { username } = useParams(); //comment
     const [data, setData] = useState({
-        first_name: "Palonchi",
-        last_name: "Pismadonchi",
     }); //comment
 
     /* SET/CHANGE CSS VARIABLES */
@@ -203,9 +201,9 @@ const UserPageContact = (comingProps) => {
         try {
             const res = await $host.get("api/v1/contact/" + username);
             setData(res.data);
-        } catch (e) {
-            // return window.location.assign("/");
+        } catch (e) {   
             console.log(e);
+            return window.location.assign("/");
         }
     };
     useEffect(() => {
@@ -1144,8 +1142,8 @@ const UserPageContact = (comingProps) => {
                                     {/* <img className="contact-img" src={props.avatar} /> */}
                                     <div className="contact-initials">
                                         <div>
-                                            {data.first_name[0]}
-                                            {data.last_name[0]}
+                                            {data.first_name && data.first_name[0]}
+                                            {data.last_name && data.last_name[0]}
                                         </div>
                                     </div>
                                     <div className="contact-name">{`${data.first_name} ${data.last_name}`}</div>

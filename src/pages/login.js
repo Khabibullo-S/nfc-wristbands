@@ -8,35 +8,54 @@ import {$host} from "../http";
 import {observer} from "mobx-react-lite";
 import { useUser } from '../constructor/UserContext'
 import CryptoJS from 'crypto-js';
+import {message} from "antd";
 
 
 const Login = () => {
     const user = useUser();
     const [username , setUsername] = useState('');
     const [password , setPassword] = useState('');
+    const [messageApi, contextHolder] = message.useMessage();
     const history = useNavigate();
     const click = async ()=>{
-        try {
-            const { data } = await $host.post('api/v1/login', { username, password });
-            localStorage.setItem('token', data.tokens.access);
-            localStorage.setItem('refreshToken', data.tokens.refresh);
-            localStorage.setItem('uuid', data.user.id);
-            const encryptedUserData = CryptoJS.AES.encrypt(
-                JSON.stringify(data.user),
-                'nfcGlobal'
-            ).toString();
-            localStorage.setItem('user',encryptedUserData);
-            window.location.assign('/admin')
-            console.log(user)
-        }catch (e) {
-            alert(e)
-        }
+        if (!username){
+            messageApi.open({
+                type: 'error',
+                content: 'username is required',
+            });
+        }else if(!password){
+            messageApi.open({
+                type: 'error',
+                content: 'password is required',
+            });
+        }else {
+            try {
+                const { data } = await $host.post('api/v1/login', { username, password });
+                localStorage.setItem('token', data.tokens.access);
+                localStorage.setItem('refreshToken', data.tokens.refresh);
+                localStorage.setItem('uuid', data.user.id);
+                const encryptedUserData = CryptoJS.AES.encrypt(
+                    JSON.stringify(data),
+                    'nfcGlobal'
+                ).toString();
+                localStorage.setItem('user',encryptedUserData);
+                if (data.user.type === "POLYGRAPHY"){
+                    window.location.assign('/cabinet/getOrders')
+                }else {return window.location.assign('/cabinet/Profile')}
 
+            }catch (e) {
+                messageApi.open({
+                    type: 'error',
+                    content: 'username or password',
+                });
+            }
+        }
     };
 
     return (
         <div style={{display:"flex" , flexDirection:"column", justifyContent:"center", alignItems:"center", height:'100vh'}}>
-            <Row style={{display:"flex" , flexDirection:"column", width:'30%'}}>
+            {contextHolder}
+            <Row style={{display:"flex" , flexDirection:"column", width:'50%'}}>
                 <Col>
                     <FloatingLabel
                         controlId="floatingInput"

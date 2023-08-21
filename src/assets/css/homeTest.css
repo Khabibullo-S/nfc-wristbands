@@ -1,0 +1,9 @@
+:root{
+    --bg-test:#f4f0fa;
+    --color-test:#7755cc;
+}
+.container-test{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

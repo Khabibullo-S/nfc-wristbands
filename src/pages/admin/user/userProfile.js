@@ -93,7 +93,7 @@ const UserProfile = () => {
 
     }
     return (
-        <div style={{marginLeft:'21px', marginRight:"21px"}}>
+        <div>
             <Container>
                 <Row >
                     <Col style={{marginTop:"30px" }} >
