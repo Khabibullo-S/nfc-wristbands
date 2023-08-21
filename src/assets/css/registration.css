@@ -105,7 +105,7 @@ body,
     transform-origin: 50% 130%;
     color: #000;
     min-width: fit-content;
-    position: static; /* remove the absolute positioning
+    position: NFC_Build; /* remove the absolute positioning
   }
   .registration-box.container
     .label-separate-form.form-floating
