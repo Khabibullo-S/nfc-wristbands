@@ -40,8 +40,8 @@ const Login = () => {
                 ).toString();
                 localStorage.setItem('user',encryptedUserData);
                 if (data.user.type === "POLYGRAPHY"){
-                    window.location.assign('/cabinet/getOrders')
-                }else {return window.location.assign('/cabinet/Profile')}
+                    window.location.assign('cabinet/getOrders')
+                }else {return window.location.assign('cabinet/Profile')}
 
             }catch (e) {
                 messageApi.open({
