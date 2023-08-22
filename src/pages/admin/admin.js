@@ -114,7 +114,7 @@ const Admin = observer(() => {
                         {typeUser() === 'COMPANY' &&
                             <ul>
                                 <li>
-                                    <Link to={`${ADMIN_ROUTE}/${PROFILE_COMPANY}`}>
+                                    <Link to={`${PROFILE_COMPANY}`}>
                                         Profile <UserOutlined />
                                     </Link>
                                 </li>
