@@ -12,6 +12,7 @@ import {
     UserOutlined
 } from "@ant-design/icons";
 import {
+    ADMIN_ROUTE,
     EDIT_ALL_USER, GET_ORDERS,
     ORDER_USER, ORDERS_MANAGER,
     PROFILE_ADMIN,
@@ -113,7 +114,7 @@ const Admin = observer(() => {
                         {typeUser() === 'COMPANY' &&
                             <ul>
                                 <li>
-                                    <Link to={PROFILE_COMPANY}>
+                                    <Link to={`${ADMIN_ROUTE}/${PROFILE_COMPANY}`}>
                                         Profile <UserOutlined />
                                     </Link>
                                 </li>
