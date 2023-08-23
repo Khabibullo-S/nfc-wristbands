@@ -8,7 +8,7 @@ function ReplayQr(props) {
     const getUserData =async ()=>{
         try {
             const res = await $host.get('api/v2/contact/pk/'+id)
-            window.location.assign(`contact/${res.data.user.nick_name}`)
+            window.location.assign(`/contact/${res.data.user.nick_name}`)
         }catch (e){console.log(e)}
     }
     useEffect(()=>{

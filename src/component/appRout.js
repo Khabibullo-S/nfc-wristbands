@@ -23,7 +23,7 @@ const AppRout = observer(() => {
                 ))}
 
             {/* User Page Contact */}
-            <Route path="contact/:username" element={<UserPageContact />} />
+            <Route path="/contact/:username" element={<UserPageContact />} />
             <Route path="/:id" element={<ReplayQR />} />
 
             {/* Catch-All Redirect */}
