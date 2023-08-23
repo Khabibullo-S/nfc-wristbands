@@ -104,7 +104,7 @@ console.log(dataOrder)
                              <td>
                                  <div id={"qr-" + item.user.username}>
                                      <QRCode
-                                         value={window.location.protocol + "//" + window.location.hostname + "/" + item.user.username}/>
+                                         value={window.location.protocol + "//" + window.location.hostname + "/" + item.user.id}/>
                                  </div>
                                  <Button onClick={() => downloadQR(item.user.username)}>
                                      Download
