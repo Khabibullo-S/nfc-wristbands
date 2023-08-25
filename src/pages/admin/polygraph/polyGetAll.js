@@ -2,7 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import {$authHost} from "../../../http";
 import {Container, Table} from "react-bootstrap";
 import {Button, message, Modal} from 'antd';
-import QRCode from 'qrcode.react';
+import QRCode from 'react-qr-code';
+import { saveAs } from 'file-saver';
 
 const PolyGetAll = () => {
 
@@ -29,22 +30,18 @@ const PolyGetAll = () => {
     }
 
     const downloadQR = (username) => {
-        const qrCode = document.querySelector(`#qr-${username} canvas`);
-        console.log(qrCode)
+        const qrCode = document.querySelector(`#qr-${username} svg`); // Query SVG element
         if (qrCode) {
-            console.log(qrCode.value)
-            const qrCodeDataUrl = qrCode.toDataURL('image/png')
-            const link = document.createElement('a');
-            link.href = qrCodeDataUrl;
-            link.download = `qrcode-${username}.png`;
-            link.click()
+            const svgData = new XMLSerializer().serializeToString(qrCode); // Serialize SVG to XML
+            const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' }); // Create Blob from XML data
+            saveAs(blob, `qrcode-${username}.svg`); // Save Blob as SVG file
         } else {
             messageApi.open({
                 type: 'error',
                 content: 'QR code yuklanishda xatolik yuzaga keldi',
-            })
+            });
         }
-    }
+    };
 
 
     const changeStatus = async ()=>{
@@ -104,6 +101,8 @@ console.log(dataOrder)
                              <td>
                                  <div id={"qr-" + item.user.username}>
                                      <QRCode
+                                         level={'L'}
+                                         size={100}
                                          value={window.location.protocol + "//" + window.location.hostname + "/" + item.user.id}/>
                                  </div>
                                  <Button onClick={() => downloadQR(item.user.username)}>
