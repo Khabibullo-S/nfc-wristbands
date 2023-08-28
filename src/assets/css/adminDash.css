@@ -391,6 +391,7 @@
 @media screen and (max-width: 992px) {
   .admin__info-content {
     height: 100vh;
+    
   }
   .admin__container {
     display: grid;
