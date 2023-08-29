@@ -42,14 +42,13 @@ const useTokenRefresh = () => {
                 refresh: localStorage.getItem('refreshToken'),
             });
             const newAccessToken = data.access;
-            console.log(data.access);
             setAccessToken(newAccessToken);
             localStorage.setItem('token', newAccessToken);
             console.log("oxshadi")
             return newAccessToken;
         } catch (error) {
             console.error('Token yangilashda xatolik yuz berdi:', error);
-             history('/');
+            window.location.assign('/')
         }
     }
 
