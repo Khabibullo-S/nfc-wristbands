@@ -381,3 +381,265 @@ export const footerLangs = {
     },
     createdBy: { uz: "tomonidan yaratilgan", en: "created by", ru: "создано" },
 };
+
+/* FOR NEW HOME COMPONENT */
+
+export const newHomeLangs = {
+    navbar: {
+        home: {
+            uz: "Bosh sahifa",
+            en: "Home",
+            ru: "Главная страница",
+        },
+        about: {
+            uz: "Haqida",
+            en: "About",
+            ru: "О нас",
+        },
+        contact: {
+            uz: "Kontaktlar",
+            en: "Contact",
+            ru: "Контакты",
+        },
+        login: {
+            uz: "Kirish",
+            en: "Log In",
+            ru: "Войти",
+        },
+        signUp: {
+            uz: "Ro'yhatdan o'tish",
+            en: "Sign Up",
+            ru: "Регистрация",
+        },
+    },
+    heroSection: {
+        infoTitle: {
+            uz: "Raqamli Profilingizni Bir Tugmani Bosish Orqali <span>Ulaning va Ulashing!</span>",
+            en: "Connect and Share Your Digital Profile With a <span>Single Tap!</span>",
+            ru: "Подключайтесь и делитесь своим цифровым профилем <span>одним нажатием!</span>",
+        },
+        infoText: {
+            uz: "Bizning mahsulotlarimiz o'zingiz haqingizdagi barcha kerakli ma'lumotlarni boshqalar bilan baham ko'rish yo'lingizni soddalashtirish uchun mo'ljallangan.",
+            en: "Our products is designed to simplify the way you share all the necessary information about yourself with others.",
+            ru: "Наши продукты предназначены для того, чтобы упростить способ обмена всей необходимой информацией о себе с другими.",
+        },
+        getStarted: {
+            uz: "Bepul Boshlash",
+            en: "Get Started for Free",
+            ru: "Начните бесплатно",
+        },
+        watchVideo: {
+            uz: "Video Tomosha qilish",
+            en: "Watch Video",
+            ru: "Смотреть видео",
+        },
+    },
+    functionsSection: {
+        headerTitle: {
+            uz: "Nima Bilan Shug'ullansangiz ham, Nimaga Qiziqsangiz ham - Buni <span>Bir Havola Orqali Ulashing!</span> ",
+            en: "Whatever You Do, Whatever You're Into - <span>Share in One Simple Link</span>",
+            ru: "Чем Бы Вы ни Занимались, Чем Бы Вы ни Интересовались - <span>Поделитесь Одной</span> <span>Простой Ссылкой!</span>",
+        },
+        headerText: {
+            uz: "Siz bir zumda to'liq profilingizni baham ko'rishingiz mumkin, bu esa tarmoqli ishlashni va boshqalar bilan bog'lanishni osonlashtiradi",
+            en: "You can instantly share your complete profile, making networking and connecting with others a breeze",
+            ru: "Вы можете мгновенно поделиться своим полным профилем, упрощая работу в сети и общение с другими людьми",
+        },
+        cards: [
+            {
+                infoTitle: {
+                    uz: "Profilingizni boshqaring",
+                    en: "Manage your profile",
+                    ru: "Управляйте своим профилем",
+                },
+                infoText: {
+                    uz: "Tez va oson redaktor yordamida kontentni tahrirlang, yangilang va rejalashtiring va saytingizni allaqachon foydalanayotgan vositalar bilan muammosiz ulang.",
+                    en: "Edit, update, and schedule content with our quick, easy editor and seamlessly connect your bio site with the tools you already use.",
+                    ru: "Редактируйте, обновляйте и планируйте контент с помощью нашего быстрого и простого редактора и легко подключайте свой сайт к инструментам, которые вы уже используете.",
+                },
+            },
+            {
+                infoTitle: {
+                    uz: "Qog'oz kartalarni tejang",
+                    en: "Save paper cards",
+                    ru: "Экономьте бумажные карты",
+                },
+                infoText: {
+                    uz: "Tadbirlarda sizga berilgan qog'oz kartalarni suratga oling va barcha kartalarni bir ilovada saqlang.",
+                    en: "Take photos of paper cards handed to you at the events and save them in the app, keep all cards in one place.",
+                    ru: "Сфотографируйте бумажные карты, которые вам вручили на мероприятиях, и сохраните их в приложении, храните все карты в одном месте.",
+                },
+            },
+            {
+                infoTitle: {
+                    uz: "O'zingiz xohlagan tarzda ulashing",
+                    en: "Share the way you want",
+                    ru: "Делитесь так, как хотите",
+                },
+                infoText: {
+                    uz: "Siz profilingiz va kontentingizni bir nechta usulda ulashishingiz mumkin, jumladan NFC, QR kod yoki Internet havola orqali.",
+                    en: "You can share your profile and content in multiple ways, including NFC tap, QR code, or Link through the internet.",
+                    ru: "Вы можете поделиться своим профилем и контентом несколькими способами, включая касание NFC, QR-код или ссылку через Интернет.",
+                },
+            },
+        ],
+    },
+    featuresSection: {
+        headerTitle: {
+            uz: "Auditoriyangizni <span>Bir Joyda</span> Birlashtirish Orqali Jalb Qiling va Ko'paytiring",
+            en: "Grow And Engage Your Audience by Unifying Them in <span>One Place</span>",
+            ru: "Развивайте и Вовлекайте Свою Аудиторию, Объединяя ее в <span>Одном Месте</span>",
+        },
+        headerText: {
+            uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
+            en: "Control your business and team with our products",
+            ru: "Управляйте своим бизнесом и командой с помощью наших продуктов",
+        },
+        cards: [
+            {
+                infoTitle: {
+                    uz: "Auditoriyangizni <span>Tahlil Qiling</span> va Izdoshlaringizni <span>Jalb Qiling</span>",
+                    en: "<span>Analyze</span> Your Audience and Keep Your Followers <span>Engaged</span>",
+                    ru: "<span>Анализируйте</span> Свою Аудиторию и <span>Поддерживайте Интерес</span> Подписчиков",
+                },
+                infoText: {
+                    uz: "Foydalanuvchilaringizni vaqt jarayonidagi ishtirokini shuningdek daromadni kuzating va auditoriyangizni nima jalb qilishini bilib oling. Auditoriyangiz siz bilan jam bo'lishi uchun bir zumda o'zgartirishlar kiriting",
+                    en: "Track users engagement over time, monitor revenue and learn what’s converting your audience. Make informed updates on the fly to keep them coming back",
+                    ru: "Отслеживайте вовлеченность пользователей с течением времени, отслеживайте доход и узнавайте, что конвертирует вашу аудиторию. Делайте информированные обновления на лету, чтобы они возвращались",
+                },
+            },
+            {
+                infoTitle: {
+                    uz: "Profilingizni <span>Brendingizga</span> Moslashtiring",
+                    en: "Customize Your Profile to Match <span>Your Brand</span>",
+                    ru: "Настройте Свой Профиль в Соответствии с <span>Вашим Брендом</span>",
+                },
+                infoText: {
+                    uz: "Ijtimoiy tarmoq, veb-saytingiz, do'kon, video, musiqa, podkast, voqealar va boshqalarni ulang. Barchasi konvertatsiya qilishga mo'ljallangan bio qo'nish sahifasida bog'lanishda bir joyga yig'iladi",
+                    en: "Connect your social media, website, store, videos, music, podcast, events and more. It all comes together in a link in the bio landing page designed to convert",
+                    ru: "Подключите свои социальные сети, веб-сайт, магазин, видео, музыку, подкасты, события и многое другое. Все это объединяется в ссылке на целевой странице биографии, предназначенной для конвертации",
+                },
+            },
+            {
+                infoTitle: {
+                    uz: "<span>Jamoalar</span> uchun barqaror <span>NFC bilaguzuklari</span>",
+                    en: "Sustainable <span>NFC Bracelets</span> For <span>Teams</span>",
+                    ru: "Экологичные <span>браслеты NFC</span> для <span>команд</span>",
+                },
+                infoText: {
+                    uz: "Xodim ishdan ketganda kartani yangi xodimlar bilan qayta ishlatishingiz, isrofgarchilik va xarajatlarni kamaytirishingiz mumkin",
+                    en: "When an employee leaves, you can reuse the card with new employees, reducing waste and costs",
+                    ru: "Когда сотрудник увольняется, вы можете повторно использовать карту с новыми сотрудниками, сокращая отходы и затраты",
+                },
+            },
+        ],
+    },
+    dashboardSection: {
+        headerTitle: {
+            uz: "Auditoriyangizni <span>Bir Joyda</span> Birlashtirish Orqali Jalb Qiling va Ko'paytiring",
+            en: "The Fast, Powerful, And Intelligent Editor to Create <span>Your</span> <span>Digital Profile</span>",
+            ru: "Развивайте и Вовлекайте Свою Аудиторию, Объединяя ее в <span>Одном Месте</span>",
+        },
+        headerText: {
+            uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
+            en: "One place for all your paper cards, digital profiles, products, and analytics, all you need is one click away!",
+            ru: "Управляйте своим бизнесом и командой с помощью наших продуктов",
+        },
+        infoTitle: {
+            uz: "Auditoriyangizni <span>Bir Joyda</span> Birlashtirish Orqali Jalb Qiling va Ko'paytiring",
+            en: "<span>Jumpstart</span> Your Corner of The Internet Today",
+            ru: "Развивайте и Вовлекайте Свою Аудиторию, Объединяя ее в <span>Одном Месте</span>",
+        },
+        infoText: {
+            uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
+            en: "One place for all your paper cards, digital profiles, products, and analytics, all you need is one click away!",
+            ru: "Управляйте своим бизнесом и командой с помощью наших продуктов",
+        },
+    },
+    footerSection: {
+        footerRights: {
+            uz: "Barcha Huquqlar Himoyalangan",
+            en: "All Rights Reserved.",
+            ru: "Все Права Защищены.",
+        },
+        footerColumns: [
+            {
+                columnTitle: {
+                    uz: "Mahsulot",
+                    en: "Product",
+                    ru: "Продукт",
+                },
+                columnLinks: [
+                    {
+                        uz: "Xususiyatlar",
+                        en: "Features",
+                        ru: "Функции",
+                    },
+                    {
+                        uz: "Narxlar",
+                        en: "Pricing",
+                        ru: "Цены",
+                    },
+                    {
+                        uz: "Sharhlar",
+                        en: "Reviews",
+                        ru: "Обзоры",
+                    },
+                ],
+            },
+            {
+                columnTitle: {
+                    uz: "Kompaniya",
+                    en: "Company",
+                    ru: "Компания",
+                },
+                columnLinks: [
+                    {
+                        uz: "Biz Haqimizda",
+                        en: "About",
+                        ru: "О нас",
+                    },
+                    {
+                        uz: "Aloqa",
+                        en: "Contact",
+                        ru: "Контакт",
+                    },
+                    {
+                        uz: "Yordam",
+                        en: "Support",
+                        ru: "Поддержка",
+                    },
+                    {
+                        uz: "Yangiliklar",
+                        en: "News",
+                        ru: "Новости",
+                    },
+                    {
+                        uz: "Karyera",
+                        en: "Careers",
+                        ru: "Карьера",
+                    },
+                ],
+            },
+            {
+                columnTitle: {
+                    uz: "Yuridik",
+                    en: "Legal",
+                    ru: "Юридический",
+                },
+                columnLinks: [
+                    {
+                        uz: "Maxfiylik Siyosati",
+                        en: "Privacy Policy",
+                        ru: "Политика Конфиденциальности",
+                    },
+                    {
+                        uz: "Xizmat Ko'rsatish Shartlari",
+                        en: "Terms of Service",
+                        ru: "Условия Использования",
+                    },
+                ],
+            },
+        ],
+    },
+};

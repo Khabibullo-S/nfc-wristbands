@@ -6,6 +6,7 @@ body{
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif !important;
 }
+
 .ant-modal-footer{
     display: none;
 }
