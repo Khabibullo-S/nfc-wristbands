@@ -3,8 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../src/assets/css/wpsay.css";
+import { wpsayLangs } from "../utils/multiLang";
 
 const Wpsay = (props) => {
+  const pageLang = props.pageLang;
   const settings = {
     dots: true,
     arrows: false,
@@ -35,44 +37,16 @@ const Wpsay = (props) => {
   return (
     <>
       <div className="wpsay">
-        <div className="wpsay-title">What people say</div>
+        <div className="wpsay-title">{wpsayLangs.wpsayHeader[pageLang]}</div>
         <Slider {...settings} id="slider">
-          <div className="wpsay-item">
-            <div className="wpsay-container">
-              <h1>Review</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+          {wpsayLangs.reviews[pageLang].map((review) => (
+            <div className="wpsay-item">
+              <div className="wpsay-container">
+                <h1>{wpsayLangs.review[pageLang]}</h1>
+                <p>{review}</p>
+              </div>
             </div>
-          </div>
-          <div className="wpsay-item">
-            <div className="wpsay-container">
-              <h1>Review</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-          <div className="wpsay-item">
-            <div className="wpsay-container">
-              <h1>Review</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-          <div className="wpsay-item">
-            <div className="wpsay-container">
-              <h1>Review</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </>

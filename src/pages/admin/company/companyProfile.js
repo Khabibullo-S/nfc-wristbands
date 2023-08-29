@@ -102,7 +102,7 @@ const CompanyProfile = () => {
     <div>
       {contextHolder}
 
-      <Container>
+      <Container className="company-profile-container">
         <h1>Profile</h1>
         <Row>
           <Col style={{ marginTop: "30px" }}>
@@ -260,7 +260,7 @@ const CompanyProfile = () => {
             </FloatingLabel>
           </Col>
         </Row>
-        <Row>
+        <Row className="address-row">
           <Col>
             <FloatingLabel
               controlId="floatingInput"

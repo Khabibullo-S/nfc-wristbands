@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr;
 }
-ul{list-style: none !important ; padding: 0 !important}
 .admin__card {
   display: none;
 }
@@ -166,6 +165,10 @@ ul{list-style: none !important ; padding: 0 !important}
   border-radius: 2px;
 } */
 
+li.sidebar-navItem {
+  list-style: none;
+}
+
 .card__line {
   width: 200px;
   height: 2px;
@@ -216,11 +219,17 @@ ul{list-style: none !important ; padding: 0 !important}
   align-items: center;
   width: 70%;
 }
+
+/*container of row cols*/
+.userProfile .container .row .col {
+  min-width: 200px !important;
+}
+
 .sidebar-admin {
   background: #fff;
   box-shadow: 2px 2px 8px #bfbcbc;
   color: white;
-  z-index: 2;
+  z-index: 6;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -259,6 +268,18 @@ ul{list-style: none !important ; padding: 0 !important}
   align-items: center;
   margin: 20px auto;
 }
+
+.sidebar__navigation ul {
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+@media screen and (max-width: 992px) {
+  .sidebar__navigation ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .sidebar-content ul li {
   color: grey;
 }
@@ -337,7 +358,7 @@ ul{list-style: none !important ; padding: 0 !important}
 .stats-num p {
   font-size: 14px;
 }
-/* .user-order-container { 
+/* .user-order-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -392,7 +413,6 @@ ul{list-style: none !important ; padding: 0 !important}
 @media screen and (max-width: 992px) {
   .admin__info-content {
     height: 100vh;
-
   }
   .admin__container {
     display: grid;
@@ -453,9 +473,9 @@ ul{list-style: none !important ; padding: 0 !important}
   }
 
   .sidebar-content ul {
-    flex-direction: column;
     margin-top: 40px;
   }
+
   .admin__logout {
     position: relative;
   }
@@ -484,4 +504,92 @@ ul{list-style: none !important ; padding: 0 !important}
   .admin__container {
     grid-template-columns: 1fr;
   }
+}
+
+/* FOR COMPANY DASHBOARD */
+
+.company-profile-container .col {
+  min-width: 200px;
+}
+.address-row > * {
+  min-width: 250px;
+}
+
+/* COMPANY USER LIST */
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* freaking padding not working with table mb because of box-sizing or something idk
+/* .userList-table-body > tr:first-of-type {
+  padding: 20px 20px 0 20px;
+} */
+
+.userList-table-body > tr:first-of-type > td:first-of-type {
+  border-top-left-radius: 15px;
+}
+.userList-table-body > tr:first-of-type > td:last-of-type {
+  border-top-right-radius: 15px;
+}
+.userList-table-body > tr:last-of-type > td:first-of-type {
+  border-bottom-left-radius: 15px;
+}
+.userList-table-body > tr:last-of-type > td:last-of-type {
+  border-bottom-right-radius: 15px;
+}
+
+.userList-table-actionBtns {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.userList-table-actionBtns > * {
+  min-width: 80px;
+}
+
+/* FOR ORDERS */
+
+.companyOrder {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orderBtn {
+  margin: 0 !important;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.orderBtn > select {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: none;
+  margin: 0 !important;
+}
+.orderBtn > select::after {
+}
+
+.companyOrder table tr:first-of-type > td:first-of-type {
+  border-top-left-radius: 15px;
+}
+.companyOrder table tr:first-of-type > td:last-of-type {
+  border-top-right-radius: 15px;
+}
+.companyOrder table tr:last-of-type > td:first-of-type {
+  border-bottom-left-radius: 15px;
+}
+.companyOrder table tr:last-of-type > td:last-of-type {
+  border-bottom-right-radius: 15px;
 }

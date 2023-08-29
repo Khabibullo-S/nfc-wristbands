@@ -99,8 +99,9 @@ className="v-start-btn" */
   font-family: "Inter", sans-serif;
   font-weight: 600;
   min-width: 157px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
+  /* padding-top: 15px;
+  padding-bottom: 15px; */
   border: 0;
   border-radius: 28px;
   color: #111827;
