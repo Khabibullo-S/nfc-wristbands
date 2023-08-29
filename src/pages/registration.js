@@ -1,20 +1,19 @@
-import React, {useContext, useState} from "react";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import {message} from "antd";
-
+import React, {useState} from 'react';
+import {Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 import {
-    Container,
-    Form,
-    Card,
-    Button,
-    Row,
-    Col,
-    FormGroup,
-} from "react-bootstrap";
-import {login, registration} from "../http/userAPI";
-import "../assets/css/registration.css";
+    ApartmentOutlined,
+    CalendarOutlined, EnvironmentOutlined,
+    LockOutlined,
+    MailOutlined,
+    PhoneOutlined,
+    UserOutlined
+} from "@ant-design/icons";
+import {Link} from "react-router-dom";
+import {LOGIN_ROUTE} from "../utils/consts";
+import {message} from "antd";
+import {registration} from "../http/userAPI";
 
-const Registration = () => {
+function Registration(props) {
     const [messageApi, contextHolder] = message.useMessage();
 
     const [regData, setRegData] = useState([]);
@@ -80,334 +79,250 @@ const Registration = () => {
     };
 
 
+    const [page1 , setPage1] = useState(true)
+    const [page2 , setPage2] = useState(false)
+    const nextBtn = () => {
+      setPage1(false)
+      setPage2(true)
+    }
+    const backBtn = () => {
+      setPage1(true)
+        setPage2(false)
+    }
+
+console.log(regData)
+
     return (
-        <div className="registration">
+        <div>
             {contextHolder}
-
-            <Container className="registration-box">
-                <Row>
-                    <Col className="mb-4">
-                        <div>Sign up</div>
-                    </Col>
-                </Row>
-                <Container>
-                    <Row>
-                        <Col>
-                            {/* EMAIL */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="email address"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="email"
-                                    placeholder="name@example.com"
-                                    value={regData.email}
-                                    onChange={(e) => {
-                                        setRegData({...regData, email: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                        <Col>
-                            {/* USERNAME */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="username"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder=""
-                                    value={regData.username}
-                                    onChange={(e) => {
-                                        setRegData({...regData, username: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                    </Row>
-                    <Row className="password-row">
-                        <div>
-                            {invalidConfirm ? (
-                                <Row>
-                                    <Col style={{color: "red"}}>INVALID CONFIRMATION</Col>
-                                </Row>
-                            ) : (
-                                <></>
-                            )}
-                        </div>
-                        <Col>
-                            {/* PASSWORD */}
-                            <FloatingLabel
-                                controlId="floatingPassword"
-                                label="password"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                    value={regData.password}
-                                    onChange={(e) => {
-                                        setRegData({...regData, password: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col>
-                            <div className="w-full flex items-center justify center mb-2">
-                                Personal details:
+            <Container>
+                <div className="registration-container">
+                    <div className="reg-title">Sign Up</div>
+                    {page1 && <div className={'indexReg'}>
+                            <Row>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><MailOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            type={'email'}
+                                            placeholder={`Email`}
+                                            aria-label={`Email`}
+                                            aria-describedby={`Email`}
+                                            value={regData.email}
+                                            onChange={(e) => {
+                                                setRegData({...regData, email: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><UserOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            placeholder={`Username`}
+                                            aria-label={`Username`}
+                                            aria-describedby={`Username`}
+                                            value={regData.username}
+                                            onChange={(e) => {
+                                                setRegData({...regData, username: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+                        <Row>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><LockOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        type={'password'}
+                                        placeholder={`Password`}
+                                        aria-label={`Password`}
+                                        aria-describedby={`Password`}
+                                        value={regData.password}
+                                        onChange={(e) => {
+                                            setRegData({...regData, password: e.target.value});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                            <Row>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><UserOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            placeholder={`First name`}
+                                            aria-label={`First name`}
+                                            aria-describedby={`First name`}
+                                            value={regData.first_name}
+                                            onChange={(e) => {
+                                                setRegData({...regData, first_name: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><UserOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            placeholder={`Last name`}
+                                            aria-label={`Last name`}
+                                            aria-describedby={`Last name`}
+                                            value={regData.last_name}
+                                            onChange={(e) => {
+                                                setRegData({...regData, last_name: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><PhoneOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            type={'tel'}
+                                            placeholder={`Phone number`}
+                                            aria-label={`Phone number`}
+                                            aria-describedby={`Phone number`}
+                                            value={regData.phone}
+                                            onChange={(e) => {
+                                                setRegData({...regData, phone: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                                <Col>
+                                    <InputGroup className="mb-3" style={{height:"55px"}}>
+                                        <InputGroup.Text id="basic-addon1"><CalendarOutlined /></InputGroup.Text>
+                                        <Form.Control
+                                            type="date"
+                                            placeholder={`Birthday`}
+                                            aria-label={`Birthday`}
+                                            aria-describedby={`Birthday`}
+                                            value={regData.birthday}
+                                            onChange={(e) => {
+                                                setRegData({...regData, birthday: e.target.value});
+                                            }}
+                                        />
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+                            <div className={'backBox'}>
+                                <button className={"backBtn"} onClick={nextBtn}>Next</button>
+                                <div className="backBtnPage">
+                                    <div style={{background:"#494949",filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}></div>
+                                    <div style={{background:"#D9D9D9",filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}></div>
+                                </div>
                             </div>
-                        </Col>
-                    </Row>
-                    <Row className="names-row">
-                        <Col>
-                            {/* FIRST NAME */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="first name"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Palonchi"
-                                    value={regData.first_name}
-                                    onChange={(e) => {
-                                        setRegData({...regData, first_name: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                        <Col>
-                            {/* LAST NAME */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label=" last_name"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder="last_name"
-                                    value={regData.last_name}
-                                    onChange={(e) => {
-                                        setRegData({...regData, last_name: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            {/* PHONE NUMBER */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="phone number"
-                                className="mb-4" // label-separate-form
-                            >
-                                <Form.Control
-                                    type="tel"
-                                    placeholder="+99812345689"
-                                    value={regData.phone}
-                                    onChange={(e) => {
-                                        setRegData({...regData, phone: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                        <Col>
-                            {/* BIRTHDAY DATE */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="birthday"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="date"
-                                    placeholder="birthday"
-                                    value={regData.birthday}
-                                    onChange={(e) => {
-                                        setRegData({...regData, birthday: e.target.value});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            {/* WORK INFO */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="organization"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder="hello from work info"
-                                    onChange={(e) => {
-                                        setRegData({...regData , work_info:{...regData.work_info , org:e.target.value}});
-                                    }}
-                                />
-                            </FloatingLabel><FloatingLabel
-                                controlId="floatingInput"
-                                label="Role"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder="hello from work info"
-                                    onChange={(e) => {
-                                        setRegData({...regData , work_info:{...regData.work_info , role:e.target.value}});
-                                    }}
-                                />
-                            </FloatingLabel>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            {/* ADDRESS */}
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="City"
-                                className="mb-4"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    placeholder="hello from address"
-                                    // value={regData.address.city}
-                                    onChange={(e) => {
-                                        setRegData({...regData , address:{...regData.address , city:e.target.value}});
-                                    }}
-                                />
-                            </FloatingLabel>
-
-                          <FloatingLabel
-                              controlId="floatingInput"
-                              label="Street"
-                              className="mb-4"
-                          >
-                            <Form.Control
-                                type="text"
-                                placeholder="hello from address"
-                                // value={regData.address.street}
-                                onChange={(e) => {
-                                  setRegData({...regData , address:{...regData.address ,street:e.target.value}});
-                                }}
-                            />
-                          </FloatingLabel>
-                          <FloatingLabel
-                              controlId="floatingInput"
-                              label="Region"
-                              className="mb-4"
-                          >
-                            <Form.Control
-                                type="text"
-                                placeholder="hello from address"
-                                // value={regData.address.region}
-                                onChange={(e) => {
-                                  setRegData({...regData , address:{...regData.address,region:e.target.value}});
-                                }}
-                            />
-                          </FloatingLabel>
-                          <FloatingLabel
-                              controlId="floatingInput"
-                              label="Country"
-                              className="mb-4"
-                          >
-                            <Form.Control
-                                type="text"
-                                placeholder="hello from address"
-                                // value={regData.address.country}
-                                onChange={(e) => {
-                                  setRegData({...regData , address:{...regData.address,country:e.target.value}});
-                                }}
-                            />
-                          </FloatingLabel>
-
-
-
-
-
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Button onClick={click}>send</Button>
-                        </Col>
-                    </Row>
-                </Container>
-
-                {/* <input
-          type="email"
-          placeholder={"email"}
-          value={regData.email}
-          onChange={(e) => {
-            setRegData({ ...regData, email: e.target.value });
-          }}
-        />
-        <input
-          type="text"
-          placeholder={"username"}
-          value={regData.username}
-          onChange={(e) => {
-            setRegData({ ...regData, username: e.target.value });
-          }}
-        />
-        <input type="password" placeholder={"password"} />
-        <input
-          type="text"
-          placeholder={"first_name"}
-          value={regData.first_name}
-          onChange={(e) => {
-            setRegData({ ...regData, first_name: e.target.value });
-          }}
-        />
-        <input
-          type="text"
-          placeholder={"last_name"}
-          value={regData.last_name}
-          onChange={(e) => {
-            setRegData({ ...regData, last_name: e.target.value });
-          }}
-        />
-        <input
-          type="tel"
-          placeholder={"phone"}
-          value={regData.phone}
-          onChange={(e) => {
-            setRegData({ ...regData, phone: e.target.value });
-          }}
-        />
-        <input
-          type="date"
-          placeholder={"birthday"}
-          value={regData.birthday}
-          onChange={(e) => {
-            setRegData({ ...regData, birthday: e.target.value });
-          }}
-        />
-        <input
-          type="text"
-          placeholder={"work_info"}
-          value={regData.work_info}
-          onChange={(e) => {
-            setRegData({ ...regData, work_info: e.target.value });
-          }}
-        />
-        <input
-          type="text"
-          placeholder={"address"}
-          value={regData.address}
-          onChange={(e) => {
-            setRegData({ ...regData, address: e.target.value });
-          }}
-        /> */}
+                            <div className="signUpBottom">
+                                <span style={{color:"#7B7777"}}>Already have an account? <Link to={LOGIN_ROUTE} style={{color:"black"}}>Sign In</Link></span>
+                            </div>                        </div>
+                        }
+                    {page2 && <div className={'indexReg'}>
+                        <Row>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><ApartmentOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`Organization`}
+                                        aria-label={`Organization`}
+                                        aria-describedby={`Organization`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , work_info:{...regData.work_info , org:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><UserOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`Role`}
+                                        aria-label={`Role`}
+                                        aria-describedby={`Role`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , work_info:{...regData.work_info , role:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><EnvironmentOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`Country`}
+                                        aria-label={`Country`}
+                                        aria-describedby={`Country`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , address:{...regData.address,country:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><EnvironmentOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`City`}
+                                        aria-label={`City`}
+                                        aria-describedby={`City`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , address:{...regData.address , city:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><EnvironmentOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`Region`}
+                                        aria-label={`Region`}
+                                        aria-describedby={`Region`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , address:{...regData.address,region:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                            <Col>
+                                <InputGroup className="mb-3" style={{height:"55px"}}>
+                                    <InputGroup.Text id="basic-addon1"><EnvironmentOutlined /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder={`Street`}
+                                        aria-label={`Street`}
+                                        aria-describedby={`Street`}
+                                        onChange={(e) => {
+                                            setRegData({...regData , address:{...regData.address ,street:e.target.value}});
+                                        }}
+                                    />
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                        <div className={'backBox'}>
+                            <button className={"backBtn"} onClick={backBtn}>Back</button>
+                            <div className="backBtnPage">
+                                <div style={{background:"#D9D9D9",filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}></div>
+                                <div style={{background:"#494949",filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}></div>
+                            </div>
+                        </div>
+                        <div className="regBtn">
+                            <button className="btnSignUp" onClick={click}>Sign Up</button>
+                        </div>
+                        <div className="signUpBottom">
+                            <span style={{color:"#7B7777"}}>Already have an account? <Link to={LOGIN_ROUTE} style={{color:"black"}}>Sign In</Link></span>
+                        </div>
+                    </div>}
+                </div>
             </Container>
         </div>
     );
-};
+}
 
 export default Registration;

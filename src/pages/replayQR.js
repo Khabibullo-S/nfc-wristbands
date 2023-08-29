@@ -9,14 +9,14 @@ function ReplayQr(props) {
         try {
             const res = await $host.get('api/v2/contact/pk/'+id)
             window.location.assign(`/contact/${res.data.user.nick_name}`)
-        }catch (e){console.log(e)}
+        }catch (e){window.location.assign('/')}
     }
     useEffect(()=>{
         getUserData()
     },[])
     return (
         <div>
-            LOADING...
+
         </div>
     );
 }

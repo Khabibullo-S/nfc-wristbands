@@ -1,6 +1,7 @@
 
- @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RubikMedium.ttf"); font-family : "Rubik"; font-weight : 500;  }
- @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RubikRegular.ttf"); font-family : "Rubik"; font-weight : 400;  }
- @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/MontserratRomanMedium.ttf"); font-family : "Montserrat"; font-weight : 500;  }
- @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RubikSemiBold.ttf"); font-family : "Rubik"; font-weight : 600;  }
- @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/InterSemiBold.ttf"); font-family : "Inter"; font-weight : 600;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/RubikMedium.ttf"); font-family : "Rubik"; font-weight : 500;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/RubikRegular.ttf"); font-family : "Rubik"; font-weight : 400;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/MontserratRomanMedium.ttf"); font-family : "Montserrat"; font-weight : 500;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/RubikSemiBold.ttf"); font-family : "Rubik"; font-weight : 600;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/InterSemiBold.ttf"); font-family : "Inter"; font-weight : 600;  }
+ @font-face { font-display: swap; font-style : normal; src: url("../../assets/fonts/MyriadProBlack.otf"); font-family : "MyriadPro"; font-weight : 600;  }
