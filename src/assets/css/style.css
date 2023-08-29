@@ -268,3 +268,8 @@ Table {
 .orderBtn {
   margin-bottom: 30px;
 }
+
+/* DEHQONCHASIGA */
+a {
+  text-decoration: none !important;
+}

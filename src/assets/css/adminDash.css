@@ -165,6 +165,10 @@
   border-radius: 2px;
 } */
 
+li.sidebar-navItem {
+  list-style: none;
+}
+
 .card__line {
   width: 200px;
   height: 2px;
@@ -258,6 +262,18 @@
   align-items: center;
   margin: 20px auto;
 }
+
+.sidebar__navigation ul {
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+@media screen and (max-width: 992px) {
+  .sidebar__navigation ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .sidebar-content ul li {
   color: grey;
 }
@@ -391,7 +407,6 @@
 @media screen and (max-width: 992px) {
   .admin__info-content {
     height: 100vh;
-    
   }
   .admin__container {
     display: grid;
@@ -452,9 +467,9 @@
   }
 
   .sidebar-content ul {
-    flex-direction: column;
     margin-top: 40px;
   }
+
   .admin__logout {
     position: relative;
   }

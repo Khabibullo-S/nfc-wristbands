@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../../src/assets/css/newHome.css";
+import "../../src/assets/css/home.css";
 
 const Faq = (props) => {
   const { question, answer } = { ...props.faq };
