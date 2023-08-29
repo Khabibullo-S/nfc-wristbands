@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useHistory } from "react";
 import Select from "react-select";
 import Carousel from "react-bootstrap/Carousel";
-import "../assets/css/newHome.css";
+import "../assets/css/home.css";
 import Question from "../component/question";
 import Wpsay from "../component/wpsay";
 import VideoPanel from "../component/videoPanel";
