@@ -219,6 +219,12 @@ li.sidebar-navItem {
   align-items: center;
   width: 70%;
 }
+
+/*container of row cols*/
+.userProfile .container .row .col {
+  min-width: 200px !important;
+}
+
 .sidebar-admin {
   background: #fff;
   box-shadow: 2px 2px 8px #bfbcbc;
@@ -498,4 +504,92 @@ li.sidebar-navItem {
   .admin__container {
     grid-template-columns: 1fr;
   }
+}
+
+/* FOR COMPANY DASHBOARD */
+
+.company-profile-container .col {
+  min-width: 200px;
+}
+.address-row > * {
+  min-width: 250px;
+}
+
+/* COMPANY USER LIST */
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* freaking padding not working with table mb because of box-sizing or something idk
+/* .userList-table-body > tr:first-of-type {
+  padding: 20px 20px 0 20px;
+} */
+
+.userList-table-body > tr:first-of-type > td:first-of-type {
+  border-top-left-radius: 15px;
+}
+.userList-table-body > tr:first-of-type > td:last-of-type {
+  border-top-right-radius: 15px;
+}
+.userList-table-body > tr:last-of-type > td:first-of-type {
+  border-bottom-left-radius: 15px;
+}
+.userList-table-body > tr:last-of-type > td:last-of-type {
+  border-bottom-right-radius: 15px;
+}
+
+.userList-table-actionBtns {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.userList-table-actionBtns > * {
+  min-width: 80px;
+}
+
+/* FOR ORDERS */
+
+.companyOrder {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orderBtn {
+  margin: 0 !important;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.orderBtn > select {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: none;
+  margin: 0 !important;
+}
+.orderBtn > select::after {
+}
+
+.companyOrder table tr:first-of-type > td:first-of-type {
+  border-top-left-radius: 15px;
+}
+.companyOrder table tr:first-of-type > td:last-of-type {
+  border-top-right-radius: 15px;
+}
+.companyOrder table tr:last-of-type > td:first-of-type {
+  border-bottom-left-radius: 15px;
+}
+.companyOrder table tr:last-of-type > td:last-of-type {
+  border-bottom-right-radius: 15px;
 }

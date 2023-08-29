@@ -251,7 +251,7 @@ const CompanyUserList = () => {
           <td>{item.id}</td>
           <td>{item.username}</td>
           <td>{item.phone}</td>
-          <td>
+          <td className="userList-table-actionBtns">
             <Popconfirm
               title="Delete "
               description="delete"
@@ -513,7 +513,7 @@ const CompanyUserList = () => {
           <th>Phone</th>
           <th>Action</th>
         </thead>
-        <tbody>{tableUser}</tbody>
+        <tbody className="userList-table-body">{tableUser}</tbody>
       </Table>
     </div>
   );
