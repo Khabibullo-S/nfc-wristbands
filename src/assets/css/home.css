@@ -46,6 +46,12 @@ h1 {
 .nav-content ul {
   margin: 0;
 }
+
+.nav-content ul li {
+  text-align: center;
+  margin: 0;
+}
+
 .carousel-inner {
   height: 100%;
 }
@@ -64,7 +70,7 @@ h1 {
   display: flex;
   align-items: center;
 }
-.nav-component select {
+.nav-component .select {
   margin-right: 13px;
 }
 .nav-component .account {
@@ -305,6 +311,7 @@ h1 {
   font-size: 1rem;
   color: #2478f5;
   margin-bottom: 32px;
+  text-transform: uppercase;
 }
 .launch-titel h1 {
   margin: 0;
@@ -640,7 +647,7 @@ footer {
   }
 }
 
-/* styles.css (or any other CSS file) */
+/*  */
 .footer-list-item {
   font-size: 1rem; /* Equivalent to text-base */
   color: #000; /* Equivalent to text-black-900 */
@@ -689,4 +696,21 @@ footer {
   align-items: flex-start; /* Equivalent to items-start in Tailwind */
   justify-content: flex-start; /* Equivalent to justify-start in Tailwind */
   width: auto; /* Equivalent to w-auto in Tailwind */
+}
+
+/*secondary css*/
+
+/* Select a select element with name="select" */
+.select {
+  /* width: 40px;
+  height: 40px; */
+  border-radius: 10px;
+  background: #f3f3f3;
+  color: #333;
+  /* Change the font style and size of the select element */
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import "../../src/assets/css/videoPanel.css";
+import { videoPanelLangs } from "../utils/multiLang";
 
 const VideoPanel = (props) => {
+  const pageLang = props.pageLang;
   return (
     <>
       {/* flex flex-col items-center justify-center sm:m-[] sm:mb-[] sm:ml-[] sm:mr-[] sm:mt-[] sm:p-[] pt-16 sm:px-5 w-full */}
@@ -17,13 +19,15 @@ const VideoPanel = (props) => {
                 className="video-title"
                 size="txtRubikSemiBold36"
               >
-                Connect and Share with a Single Tap!
+                {videoPanelLangs.connect[`${pageLang}`]}
               </div>
             </div>
             {/* flex sm:flex-col flex-row gap-8 items-center justify-start w-auto sm:w-full */}
             <div className="v-btns-container">
               {/* bg-light_green-A200 cursor-pointer font-inter font-semibold min-w-[157px] py-[15px] rounded-[28px] text-black-900 text-center text-xl */}
-              <button className="v-start-btn">Start for free</button>
+              <button className="v-start-btn">
+                {videoPanelLangs.startBtn[`${pageLang}`]}
+              </button>
               <button className="watch-btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,9 @@ const VideoPanel = (props) => {
                   ></path>
                 </svg>
                 {/* font-inter font-semibold text-black-900 text-left text-xl */}
-                <div className="watch-btn-text">Watch video</div>
+                <div className="watch-btn-text">
+                  {videoPanelLangs.watchBtn[`${pageLang}`]}
+                </div>
               </button>
             </div>
           </div>

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../src/assets/css/slider.css";
+import { sliderLangs } from "../utils/multiLang";
 
 const Slider = (props) => {
+  const pageLang = props.pageLang;
   const slides = (
     <>
       <div class="slide">
@@ -24,7 +26,7 @@ const Slider = (props) => {
   return (
     <>
       <div className="partners">
-        <h1>Trusted by industry leaders</h1>
+        <h1>{sliderLangs.trustedBy[`${pageLang}`]}</h1>
         <div className="clients-container">
           <section className="clients">
             <div className="slider">

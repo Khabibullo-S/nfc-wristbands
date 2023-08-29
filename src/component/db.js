@@ -1,20 +1,25 @@
-import {$host} from "../http";
+import { $host } from "../http";
 
-const getUser =async ()=>{
-  const res = await $host.get('api/v1/')
-}
+const getUser = async () => {
+  const res = await $host.get("api/v1/");
+};
 export const data = [
   {
     id: 1,
-    name: "Behzod",
-    name2: "Abdullaev",
-    tel: "+998998905444",
+    url: "Abdulaxad",
+    name: "Kuchkarov",
+    name2: "Abdulaxad Maratovich",
+    tel: "+998903572528",
     companyName: "IT park",
-    jobName: "Head of Digital Technology Department",
+    jobName: "Executive director",
     instagram: "",
-    telegram: "https://t.me/s/rinzler_0101",
+    telegram: "https://t.me/s/akuchkarov",
     linkedin: "",
     facebook: "",
-    avatar: require("../assets/img/dev.jpeg"),
+    avatar: require("../assets/img/behzod-aka-avatar.JPG"),
+    pallete: {
+      main: { red: 255, green: 255, blue: 255 },
+      secondary: { red: 0, green: 0, blue: 0 },
+    },
   },
 ];

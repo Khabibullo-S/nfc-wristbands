@@ -115,6 +115,7 @@
 }
 
 .contact-name {
+  text-align: center;
   font-size: 20px;
 }
 
@@ -133,7 +134,7 @@
   font-size: 0.8rem !important;
   background-color: var(--contact-main-color, #ededf2);
   color: var(
-          --contact-button-color
+    --contact-button-color
   ); /* maybe better change this button color: add new var in js file and put it here */
   height: fit-content;
   border: 1.6px solid var(--contact-button-color);
