@@ -1461,10 +1461,10 @@ body {
 }
 
 .Home .pricing-feature-info {
-  /* margin-top: 4.5px; */
+  margin-top: 4.5px;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 1.5em;
+  line-height: 1.5em !important;
 }
 
 .Home .pricing-start-btn {
