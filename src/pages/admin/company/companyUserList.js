@@ -140,7 +140,6 @@ const CompanyUserList = () => {
     let dataIndex = {
       username: updateUser.username ? updateUser.username : get.data.username,
       email: updateUser.email ? updateUser.email : get.data.email,
-      password: updateUser.password,
       first_name: updateUser.first_name
         ? updateUser.first_name
         : get.data.first_name,
@@ -179,12 +178,7 @@ const CompanyUserList = () => {
         type: "error",
         content: "Username",
       });
-    } else if (dataIndex.password === "" || dataIndex.password === undefined) {
-      messageApi.open({
-        type: "error",
-        content: "password",
-      });
-    } else if (
+    } else  if (
       dataIndex.last_name === "" ||
       dataIndex.last_name === undefined
     ) {
@@ -216,13 +210,13 @@ const CompanyUserList = () => {
           "api/v1/users/" + updateID + "/",
           dataIndex
         );
-        console.log();
+        console.log(res);
         messageApi.open({
           type: "success",
           content: res.data.username + " update",
         });
         setTimeout(() => {
-          // return window.location.reload()
+          return window.location.reload()
         }, 2000);
       } catch (e) {
         messageApi.open({
@@ -410,13 +404,7 @@ const CompanyUserList = () => {
               setUpdateUser({ ...updateUser, email: e.target.value });
             }}
           />
-          <Input
-            placeholder="password"
-            required
-            onChange={(e) => {
-              setUpdateUser({ ...updateUser, password: e.target.value });
-            }}
-          />
+
           <Input
             placeholder="first_name"
             onChange={(e) => {

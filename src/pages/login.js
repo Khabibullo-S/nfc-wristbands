@@ -44,8 +44,14 @@ const Login = () => {
           JSON.stringify(data),
           "nfcGlobal"
         ).toString();
+        console.log(data.user.type)
         localStorage.setItem("user", encryptedUserData);
-        window.location.assign("/cabinet");
+        if (data.user.type === 'POLYGRAPHY'){
+          window.location.assign("/cabinet/getOrders");
+        }else {
+           window.location.assign("/cabinet/Profile");
+        }
+
       } catch (e) {
         messageApi.open({
           type: "error",

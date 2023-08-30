@@ -229,7 +229,7 @@ li.sidebar-navItem {
   background: #fff;
   box-shadow: 2px 2px 8px #bfbcbc;
   color: white;
-  z-index: 2;
+  z-index: 6;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -358,7 +358,7 @@ li.sidebar-navItem {
 .stats-num p {
   font-size: 14px;
 }
-/* .user-order-container { 
+/* .user-order-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
