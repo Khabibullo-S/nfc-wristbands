@@ -38,6 +38,8 @@ import {
   faBuilding,
   faUserTie,
   faMapLocationDot,
+  faUsers,
+  faMoneyCheckDollar,
 } from "@fortawesome/free-solid-svg-icons";
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -157,7 +159,9 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("profile")}
                   >
                     <Link to={`${PROFILE_COMPANY}`}>
-                      <UserOutlined />
+                      {/* <UserOutlined /> */}
+                      <FontAwesomeIcon icon={faWallet} size="lg" />
+                      <p>Orders </p>
                     </Link>
                   </li>
                   <li
@@ -167,7 +171,9 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("usersList")}
                   >
                     <Link to={USER_LIST}>
-                      <UsergroupAddOutlined />
+                      {/* <UsergroupAddOutlined /> */}
+                      <FontAwesomeIcon icon={faUsers} size="lg" />
+                      <p>Users list </p>
                     </Link>
                   </li>
                   <li
@@ -177,7 +183,9 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("orders")}
                   >
                     <Link to={ORDERS_MANAGER}>
-                      <DollarOutlined />
+                      {/* <DollarOutlined /> */}
+                      <FontAwesomeIcon icon={faMoneyCheckDollar} size="lg" />
+                      <p>Manager's order</p>
                     </Link>
                   </li>
                 </ul>
@@ -191,7 +199,9 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("orders")}
                   >
                     <Link to={GET_ORDERS}>
-                      <DollarOutlined />
+                      {/* <DollarOutlined /> */}
+                      <FontAwesomeIcon icon={faWallet} size="lg" />
+                      <p>Orders </p>
                     </Link>
                   </li>
                 </ul>
@@ -200,7 +210,7 @@ const Admin = observer(() => {
           </div>
           <div className="admin__logout">
             <button className="admin__logout-button" onClick={logOut}>
-              <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              <FontAwesomeIcon icon={faArrowRightFromBracket} size="lg"/>
             </button>
           </div>
         </div>

@@ -106,57 +106,11 @@ const CompanyProfile = () => {
         <h1>Profile</h1>
         <Row>
           <Col style={{ marginTop: "30px" }}>
+            <Form.Label htmlFor="basic-url">First Name</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`email:${currentUser.email}`}
-              className="mb-4"
-            >
-              <Form.Control
-                type="email"
-                placeholder={`email:${currentUser.email}`}
-                onChange={(e) =>
-                  setSendProf({ ...sendProf, email: e.target.value })
-                }
-              />
-            </FloatingLabel>
-          </Col>
-          <Col style={{ marginTop: "30px" }}>
-            <FloatingLabel
-              controlId="floatingInput"
-              label={`username:${currentUser.username}`}
-              className="mb-4"
-            >
-              <Form.Control
-                type="text"
-                placeholder={`username:${currentUser.username}`}
-                onChange={(e) =>
-                  setSendProf({ ...sendProf, username: e.target.value })
-                }
-              />
-            </FloatingLabel>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <FloatingLabel
-              controlId="floatingInput"
-              label={"password"}
-              required
-              className="mb-4"
-            >
-              <Form.Control
-                type="password"
-                placeholder={`password:${currentUser.password}`}
-                onChange={(e) =>
-                  setSendProf({ ...sendProf, password: e.target.value })
-                }
-              />
-            </FloatingLabel>
-          </Col>
-          <Col>
-            <FloatingLabel
-              controlId="floatingInput"
-              label={`first_name: ${currentUser.first_name}`}
+              label={`${currentUser.first_name}`}
               required
               className="mb-4"
             >
@@ -169,12 +123,11 @@ const CompanyProfile = () => {
               />
             </FloatingLabel>
           </Col>
-        </Row>
-        <Row>
-          <Col>
+          <Col style={{ marginTop: "30px" }}>
+            <Form.Label htmlFor="basic-url">Last Name</Form.Label>
             <FloatingLabel
               controlId="floatingInput"
-              label={`last_name: ${currentUser.last_name}`}
+              label={`${currentUser.last_name}`}
               required
               className="mb-4"
             >
@@ -187,10 +140,65 @@ const CompanyProfile = () => {
               />
             </FloatingLabel>
           </Col>
+        </Row>
+        <Row>
           <Col>
+            <Form.Label htmlFor="basic-url">Username</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`phone: ${currentUser.phone}`}
+              label={`${currentUser.username}`}
+              className="mb-4"
+            >
+              <Form.Control
+                type="text"
+                placeholder={`username:${currentUser.username}`}
+                onChange={(e) =>
+                  setSendProf({ ...sendProf, username: e.target.value })
+                }
+              />
+            </FloatingLabel>
+          </Col>
+          <Col>
+            <Form.Label htmlFor="basic-url">Password</Form.Label>
+
+            <FloatingLabel controlId="floatingInput" required className="mb-4">
+              <Form.Control
+                type="password"
+                placeholder={`password:${currentUser.password}`}
+                onChange={(e) =>
+                  setSendProf({ ...sendProf, password: e.target.value })
+                }
+              />
+            </FloatingLabel>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Label htmlFor="basic-url">Email</Form.Label>
+
+            <FloatingLabel
+              controlId="floatingInput"
+              label={`${currentUser.email}`}
+              className="mb-4"
+            >
+              <Form.Control
+                type="email"
+                placeholder={`email:${currentUser.email}`}
+                onChange={(e) =>
+                  setSendProf({ ...sendProf, email: e.target.value })
+                }
+              />
+            </FloatingLabel>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Label htmlFor="basic-url">Phone</Form.Label>
+
+            <FloatingLabel
+              controlId="floatingInput"
+              label={`${currentUser.phone}`}
               required
               className="mb-4"
             >
@@ -205,7 +213,7 @@ const CompanyProfile = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          {/* <Col>
             <FloatingLabel
               controlId="floatingInput"
               label={`birthday: ${currentUser.birthday}`}
@@ -220,11 +228,13 @@ const CompanyProfile = () => {
                 }
               />
             </FloatingLabel>
-          </Col>
+          </Col> */}
           <Col>
+            <Form.Label htmlFor="basic-url">Organization</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`organization: ${dataIndex.work_info.org}`}
+              label={`${dataIndex.work_info.org}`}
               required
               className="mb-4"
             >
@@ -241,9 +251,11 @@ const CompanyProfile = () => {
             </FloatingLabel>
           </Col>
           <Col>
+            <Form.Label htmlFor="basic-url">Role</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`Role: ${dataIndex.work_info.role}`}
+              label={`${dataIndex.work_info.role}`}
               required
               className="mb-4"
             >
@@ -260,11 +272,36 @@ const CompanyProfile = () => {
             </FloatingLabel>
           </Col>
         </Row>
-        <Row className="address-row">
+        <Row>
           <Col>
+            <Form.Label htmlFor="basic-url">Country</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`City: ${dataIndex.address.city}`}
+              label={`${dataIndex.address.country}`}
+              required
+              className="mb-4"
+            >
+              <Form.Control
+                type="text"
+                placeholder={`Country: ${dataIndex.address.country}`}
+                onChange={(e) => {
+                  setSendProf({
+                    ...sendProf,
+                    address: { ...sendProf.address, country: e.target.value },
+                  });
+                }}
+              />
+            </FloatingLabel>
+          </Col>
+        </Row>
+        <Row className="address-row">
+          <Col>
+            <Form.Label htmlFor="basic-url">City</Form.Label>
+
+            <FloatingLabel
+              controlId="floatingInput"
+              label={`${dataIndex.address.city}`}
               required
               className="mb-4"
             >
@@ -277,29 +314,14 @@ const CompanyProfile = () => {
               />
             </FloatingLabel>
           </Col>
+        </Row>
+        <Row>
           <Col>
+            <Form.Label htmlFor="basic-url">Region</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`Street: ${dataIndex.address.street}`}
-              required
-              className="mb-4"
-            >
-              <Form.Control
-                type="text"
-                placeholder={`Street: ${dataIndex.address.street}`}
-                onChange={(e) => {
-                  setSendProf({
-                    ...sendProf,
-                    address: { ...sendProf.address, street: e.target.value },
-                  });
-                }}
-              />
-            </FloatingLabel>
-          </Col>
-          <Col>
-            <FloatingLabel
-              controlId="floatingInput"
-              label={`Region: ${dataIndex.address.region}`}
+              label={`${dataIndex.address.region}`}
               required
               className="mb-4"
             >
@@ -316,19 +338,21 @@ const CompanyProfile = () => {
             </FloatingLabel>
           </Col>
           <Col>
+            <Form.Label htmlFor="basic-url">Street</Form.Label>
+
             <FloatingLabel
               controlId="floatingInput"
-              label={`Country: ${dataIndex.address.country}`}
+              label={`${dataIndex.address.street}`}
               required
               className="mb-4"
             >
               <Form.Control
                 type="text"
-                placeholder={`Country: ${dataIndex.address.country}`}
+                placeholder={`Street: ${dataIndex.address.street}`}
                 onChange={(e) => {
                   setSendProf({
                     ...sendProf,
-                    address: { ...sendProf.address, country: e.target.value },
+                    address: { ...sendProf.address, street: e.target.value },
                   });
                 }}
               />
