@@ -1153,7 +1153,7 @@ body {
 }
 
 .reviews .slick-dots li button:before {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 .Home .review {
