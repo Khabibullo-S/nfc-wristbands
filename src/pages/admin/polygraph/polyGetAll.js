@@ -28,10 +28,12 @@ const PolyGetAll = () => {
 
   const downloadQR = (username) => {
     const qrCode = document.querySelector(`#qr-${username} svg`);
-    console.log(qrCode)
+    console.log(qrCode);
     if (qrCode) {
       const svgData = new XMLSerializer().serializeToString(qrCode);
-      const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+      const svgBlob = new Blob([svgData], {
+        type: "image/svg+xml;charset=utf-8",
+      });
       const svgUrl = URL.createObjectURL(svgBlob);
       const link = document.createElement("a");
       link.href = svgUrl;
@@ -74,11 +76,11 @@ const PolyGetAll = () => {
 
   console.log(dataOrder);
   return (
-    <div >
+    <div className="polygraphy__container">
       <h1>Orders</h1>
       {contextHolder}
-
-        <Table  responsive  hover size="sm" style={{textAlign:"center"}}>
+      <div className="polygraphy__content">
+        <Table responsive hover size="sm" style={{ textAlign: "center" }}>
           <thead>
             <th>IDUser</th>
             <th>Username</th>
@@ -86,20 +88,20 @@ const PolyGetAll = () => {
             <th>QR</th>
             <th>Status</th>
           </thead>
-          <tbody >
+          <tbody>
             {dataOrder.map((item) => {
               return (
                 <>
                   {item.user ? (
-                    <tr key={item.user.id} >
-                      <td >{item.user.id}</td>
+                    <tr key={item.user.id}>
+                      <td>{item.user.id}</td>
                       <td>{item.user.username}</td>
                       <td>{item.updated_at.substring(0, 10)}</td>
                       <td>
                         <div id={"qr-" + item.user.username}>
                           <QRCode
-                              level={'L'}
-                              size={50}
+                            level={"L"}
+                            size={50}
                             value={
                               window.location.protocol +
                               "//" +
@@ -109,21 +111,24 @@ const PolyGetAll = () => {
                             }
                           />
                         </div>
-                        <Button onClick={() => downloadQR(item.user.username)} style={{marginTop:"10px"}}>
+                        <Button
+                          onClick={() => downloadQR(item.user.username)}
+                          style={{ marginTop: "10px" }}
+                        >
                           Download
                         </Button>
                       </td>
                       <td>
-                        {item.status}<br/>
+                        {item.status}
+                        <br />
                         <Button
-                            type="primary"
-                            onClick={() => showModal(item.user.id, item.id)}
-                            style={{marginTop:"10px"}}
+                          type="primary"
+                          onClick={() => showModal(item.user.id, item.id)}
+                          style={{ marginTop: "10px" }}
                         >
                           change status
                         </Button>
                       </td>
-
                     </tr>
                   ) : (
                     <></>
@@ -133,7 +138,6 @@ const PolyGetAll = () => {
             })}
           </tbody>
         </Table>
-
         <Modal title="change status" open={isModalOpen} onCancel={handleCancel}>
           <select id={"status"}>
             <option value="NEW">NEW</option>
@@ -142,6 +146,7 @@ const PolyGetAll = () => {
           </select>
           <button onClick={changeStatus}>send</button>
         </Modal>
+      </div>
     </div>
   );
 };
