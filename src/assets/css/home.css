@@ -1449,16 +1449,22 @@ body {
 
 .Home .pricing-feature-icon-container {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height: 100%;
   line-height: 2.2em;
 }
 
+.Home .pricing-feature-icon svg {
+  min-width: 24px;
+  min-height: 24px;
+}
+
 .Home .pricing-feature-info {
+  margin-top: 4.5px;
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 .Home .pricing-start-btn {
