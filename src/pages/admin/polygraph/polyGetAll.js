@@ -125,6 +125,7 @@ const PolyGetAll = () => {
                           type="primary"
                           onClick={() => showModal(item.user.id, item.id)}
                           style={{ marginTop: "10px" }}
+                          size="sm"
                         >
                           change status
                         </Button>

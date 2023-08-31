@@ -309,7 +309,7 @@ li.sidebar-navItem {
   border: none;
   padding: 5px 11px;
   outline: none;
-  /* background: #fff; */
+  background: #eceff0;
   color: grey;
 }
 .admin__logout button:hover {
@@ -402,11 +402,15 @@ li.sidebar-navItem {
 @media screen and (max-width: 992px) {
   .admin__info-content {
     height: 100vh;
+    padding: 0 15px;
   }
   .admin__container {
     display: grid;
     grid-template-columns: 1fr !important;
     height: 100vh;
+  }
+  .admin__logout button {
+    position: relative;
   }
 }
 @media screen and (min-width: 992px) /* and (max-width: 1200px) */ {
@@ -581,4 +585,8 @@ li.sidebar-navItem {
 }
 .companyOrder table tr:last-of-type > td:last-of-type {
   border-bottom-right-radius: 15px;
+}
+
+td {
+  word-break: break-all;
 }
