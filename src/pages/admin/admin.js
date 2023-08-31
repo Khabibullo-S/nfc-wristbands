@@ -113,7 +113,7 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("profile")}
                   >
                     <Link to={PROFILE_USER}>
-                      <FontAwesomeIcon icon={faUser} />
+                      <FontAwesomeIcon icon={faUser} size="lg" />
                       <p>Profile</p>
                     </Link>
                   </li>
@@ -124,7 +124,7 @@ const Admin = observer(() => {
                     onClick={() => handleSidebarItemClick("orders")}
                   >
                     <Link to={ORDER_USER}>
-                      <FontAwesomeIcon icon={faWallet} />
+                      <FontAwesomeIcon icon={faWallet} size="lg" />
                       <p>Orders </p>
                     </Link>
                   </li>
@@ -210,7 +210,7 @@ const Admin = observer(() => {
           </div>
           <div className="admin__logout">
             <button className="admin__logout-button" onClick={logOut}>
-              <FontAwesomeIcon icon={faArrowRightFromBracket} size="lg"/>
+              <FontAwesomeIcon icon={faArrowRightFromBracket} size="lg" />
             </button>
           </div>
         </div>
