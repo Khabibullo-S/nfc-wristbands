@@ -1117,6 +1117,7 @@ body {
 
 .Home .dashboard-section .hero-btns {
   justify-content: center;
+  flex-direction: column;
 }
 
 .Home .dashboard-section .hero-btns > div {
