@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.24ce4d6e.css",
+    "main.css": "/static/css/main.7b99e2ac.css",
     "main.js": "/static/js/main.cc9503b3.js",
     "static/media/wristband.png": "/static/media/wristband.43d17f0c4cb929c14127.png",
     "static/media/nfc-logo.png": "/static/media/nfc-logo.191ef6f648c9e299cb30.png",
@@ -13,11 +13,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.24ce4d6e.css.map": "/static/css/main.24ce4d6e.css.map",
+    "main.7b99e2ac.css.map": "/static/css/main.7b99e2ac.css.map",
     "main.cc9503b3.js.map": "/static/js/main.cc9503b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.24ce4d6e.css",
+    "static/css/main.7b99e2ac.css",
     "static/js/main.cc9503b3.js"
   ]
 }
