@@ -197,6 +197,15 @@ const Home = () => {
   const [openLanguageSelector, setOpenLanguageSelector] = useState(false);
   const [yournameInput, setYournameInput] = useState("");
 
+  // Create a ref for the input element
+  const inputRef = useRef();
+
+  // Create a function to handle clicks on the div
+  const handleInputBtnClick = () => {
+    // Set the focus on the input element
+    inputRef.current.focus();
+  };
+
   const handleYournameChange = (event) => {
     setYournameInput(event.target.value);
   };
@@ -735,9 +744,13 @@ const Home = () => {
                   <div>{">"}</div>
                 </div> */}
                   <div className="hero-btns">
-                    <div className="input-btn first-btn-style">
+                    <div
+                      onClick={handleInputBtnClick}
+                      className="input-btn first-btn-style"
+                    >
                       <span class="unit">biosite.uz/</span>
                       <input
+                        ref={inputRef}
                         type="text"
                         value={yournameInput}
                         name=""
