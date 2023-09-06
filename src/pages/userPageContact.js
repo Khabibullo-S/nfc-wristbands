@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import VCard from "vcard-creator";
 import "../assets/css/Contact.css";
@@ -131,9 +131,29 @@ const UserPageContact = (comingProps) => {
 
   // toggle share
   const [showShare, setShowShare] = useState(false);
-  const handleShareToggle = () => {
+  const handleShareToggle = (event) => {
+    // Stop the propagation of the click event to prevent conflicts
+    event.stopPropagation();
     setShowShare(!showShare);
   };
+
+  const shareContactRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showShare &&
+        shareContactRef.current &&
+        !shareContactRef.current.contains(event.target)
+      ) {
+        setShowShare(false);
+      }
+    };
+    document.body.addEventListener("click", handleClickOutside);
+    return () => {
+      document.body.removeEventListener("click", handleClickOutside);
+    };
+  }, [showShare]);
 
   // Copy url button function ->
   // Define a state variable to store the copy status
@@ -585,7 +605,7 @@ const UserPageContact = (comingProps) => {
   const shareContactContent = (
     <>
       <div className="share-contact">
-        <div className="share-box">
+        <div ref={shareContactRef} className="share-box">
           <div className="container">
             {/* SHARE TOP */}
             <div className="share-top">
@@ -1037,8 +1057,8 @@ const UserPageContact = (comingProps) => {
                   <div className="truncate">{window.location.href}</div>
                 </div>
                 <div style={{ color: copied ? "green" : "black" }}>
-                  {data.first_name && data.first_name[0]}
-                  {data.last_name && data.last_name[0]}
+                  {/* {data.first_name && data.first_name[0]}
+                  {data.last_name && data.last_name[0]} */}
                   {copied ? <>Copied!</> : <>Copy</>}
                 </div>
               </div>
@@ -1110,9 +1130,7 @@ const UserPageContact = (comingProps) => {
                   style={showShare ? { opacity: "0" } : {}}
                 >
                   <div
-                    onClick={
-                      showShare ? console.log("something") : handleShareToggle
-                    }
+                    onClick={(event) => handleShareToggle(event)}
                     style={showShare ? { opacity: "0", cursor: "default" } : {}}
                   >
                     <svg width="16" height="16" viewBox="0 0 16 16">

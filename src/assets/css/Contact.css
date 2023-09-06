@@ -171,11 +171,13 @@
   cursor: pointer;
 }
 
-.active-nav {
+.User-page-contact .active-nav {
   color: var(--contact-text-secondary-color);
   background-color: var(--contact-secondary-color);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
 .contact-info {

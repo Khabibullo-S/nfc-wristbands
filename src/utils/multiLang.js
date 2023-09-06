@@ -227,7 +227,7 @@ export const faqLangs = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
-        question: "Where else can I share my link in bio  ?",
+        question: "Where else can I share my link in bio?",
         answer:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
@@ -414,8 +414,8 @@ export const newHomeLangs = {
   },
   heroSection: {
     infoTitle: {
-      uz: "Raqamli Profilingizni Bir Tugmani Bosish Orqali <span>Ulaning va Ulashing!</span>",
-      en: "Connect and Share Your Digital Profile With a <span>Single Tap!</span>",
+      uz: "Raqamli profilingizni bir tugmani bosish orqali <span>ulaning va ulashing!</span>",
+      en: "Connect and share your digital profile with a <span>single tap!</span>",
       ru: "Подключайтесь и делитесь своим цифровым профилем <span>одним нажатием!</span>",
     },
     infoText: {
@@ -424,21 +424,33 @@ export const newHomeLangs = {
       ru: "Наши продукты предназначены для того, чтобы упростить способ обмена всей необходимой информацией о себе с другими.",
     },
     getStarted: {
-      uz: "Bepul Boshlash",
-      en: "Get Started for Free",
+      uz: "Bepul boshlash",
+      en: "Get started for free",
       ru: "Начните бесплатно",
     },
     watchVideo: {
-      uz: "Video Tomosha qilish",
-      en: "Watch Video",
+      uz: "Video tomosha qilish",
+      en: "Watch video",
       ru: "Смотреть видео",
+    },
+  },
+  trustedBySection: {
+    headerTitle: {
+      uz: "Bizga ishonadigan sanoat peshqadamlari",
+      en: "Trusted by industry leaders",
+      ru: "Доверяющие лидеры отрасли",
+    },
+    headerText: {
+      uz: "Siz bir zumda to'liq profilingizni baham ko'rishingiz mumkin, bu esa tarmoqli ishlashni va boshqalar bilan bog'lanishni osonlashtiradi",
+      en: "You can instantly share your complete profile, making networking and connecting with others a breeze",
+      ru: "Вы можете мгновенно поделиться своим полным профилем, упрощая работу в сети и общение с другими людьми",
     },
   },
   functionsSection: {
     headerTitle: {
-      uz: "Nima Bilan Shug'ullansangiz ham, Nimaga Qiziqsangiz ham - Buni <span>Bir Havola Orqali Ulashing!</span> ",
-      en: "Whatever You Do, Whatever You're Into - <span>Share in One Simple Link</span>",
-      ru: "Чем Бы Вы ни Занимались, Чем Бы Вы ни Интересовались - <span>Поделитесь Одной</span> <span>Простой Ссылкой!</span>",
+      uz: "Nima bilan shug'ullansangiz ham, nimaga qiziqsangiz ham - buni <span>bir havola orqali ulashing!</span>",
+      en: "Whatever you do, whatever you're into - <span>share in one simple link</span>",
+      ru: "Чем бы вы ни занимались, чем бы вы ни интересовались - <span>поделитесь одной</span> <span>простой ссылкой!</span>",
     },
     headerText: {
       uz: "Siz bir zumda to'liq profilingizni baham ko'rishingiz mumkin, bu esa tarmoqli ishlashni va boshqalar bilan bog'lanishni osonlashtiradi",
@@ -460,14 +472,14 @@ export const newHomeLangs = {
       },
       {
         infoTitle: {
-          uz: "Qog'oz kartalarni tejang",
-          en: "Save paper cards",
-          ru: "Экономьте бумажные карты",
+          uz: "Mablag'ingizni tejang",
+          en: "Save your money",
+          ru: "Экономьте деньги",
         },
         infoText: {
-          uz: "Tadbirlarda sizga berilgan qog'oz kartalarni suratga oling va barcha kartalarni bir ilovada saqlang.",
-          en: "Take photos of paper cards handed to you at the events and save them in the app, keep all cards in one place.",
-          ru: "Сфотографируйте бумажные карты, которые вам вручили на мероприятиях, и сохраните их в приложении, храните все карты в одном месте.",
+          uz: "Keraksiz qog'oz biznes kartalari bilan xayrlashing va barqarorlik inqilobiga qo'shiling. Bizning mahsulotimiz bilan siz o'zingizning profil ma'lumotlaringizni darhol ulashishingiz mumkin, bu sizning onlayn faoliyatingizni ekologiyaga zararsiz va samarali qiladi.",
+          en: "Say goodbye to unnecessary paper business cards and join the sustainability revolution. With our product, you can instantly share your profile information, making your online experience green and efficient.",
+          ru: "Попрощайтесь с ненужными бумажными визитками и присоединитесь к революции устойчивого развития. С помощью нашего продукта вы можете мгновенно обмениваться информацией своего профиля, делая работу в сети экологичной и эффективной.",
         },
       },
       {
@@ -486,9 +498,9 @@ export const newHomeLangs = {
   },
   featuresSection: {
     headerTitle: {
-      uz: "Auditoriyangizni <span>Bir Joyda</span> Birlashtirish Orqali Jalb Qiling va Ko'paytiring",
-      en: "Grow And Engage Your Audience by Unifying Them in <span>One Place</span>",
-      ru: "Развивайте и Вовлекайте Свою Аудиторию, Объединяя ее в <span>Одном Месте</span>",
+      uz: "Auditoriyangizni <span>bir joyda</span> birlashtirish orqali jalb qiling va ko'paytiring",
+      en: "Grow and engage your audience by unifying them in <span>one place</span>",
+      ru: "Развивайте и вовлекайте свою аудиторию, объединяя ее в <span>одном месте</span>",
     },
     headerText: {
       uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
@@ -498,9 +510,9 @@ export const newHomeLangs = {
     cards: [
       {
         infoTitle: {
-          uz: "Auditoriyangizni <span>Tahlil Qiling</span> va Izdoshlaringizni <span>Jalb Qiling</span>",
-          en: "<span>Analyze</span> Your Audience and Keep Your Followers <span>Engaged</span>",
-          ru: "<span>Анализируйте</span> Свою Аудиторию и <span>Поддерживайте Интерес</span> Подписчиков",
+          uz: "Auditoriyangizni <span>tahlil qiling</span> va izdoshlaringizni <span>jalb qiling</span>",
+          en: "<span>Analyze</span> your fudience and keep your followers <span>engaged</span>",
+          ru: "<span>Анализируйте</span> свою аудиторию и <span>поддерживайте интерес</span> подписчиков",
         },
         infoText: {
           uz: "Foydalanuvchilaringizni vaqt jarayonidagi ishtirokini shuningdek daromadni kuzating va auditoriyangizni nima jalb qilishini bilib oling. Auditoriyangiz siz bilan jam bo'lishi uchun bir zumda o'zgartirishlar kiriting",
@@ -510,9 +522,9 @@ export const newHomeLangs = {
       },
       {
         infoTitle: {
-          uz: "Profilingizni <span>Brendingizga</span> Moslashtiring",
-          en: "Customize Your Profile to Match <span>Your Brand</span>",
-          ru: "Настройте Свой Профиль в Соответствии с <span>Вашим Брендом</span>",
+          uz: "Profilingizni <span>brendingizga</span> moslashtiring",
+          en: "Customize your profile to match <span>your brand</span>",
+          ru: "Настройте свой профиль в соответствии с <span>вашим брендом</span>",
         },
         infoText: {
           uz: "Ijtimoiy tarmoq, veb-saytingiz, do'kon, video, musiqa, podkast, voqealar va boshqalarni ulang. Barchasi konvertatsiya qilishga mo'ljallangan bio qo'nish sahifasida bog'lanishda bir joyga yig'iladi",
@@ -523,7 +535,7 @@ export const newHomeLangs = {
       {
         infoTitle: {
           uz: "<span>Jamoalar</span> uchun barqaror <span>NFC bilaguzuklari</span>",
-          en: "Sustainable <span>NFC Bracelets</span> For <span>Teams</span>",
+          en: "Sustainable <span>NFC bracelets</span> for <span>teams</span>",
           ru: "Экологичные <span>браслеты NFC</span> для <span>команд</span>",
         },
         infoText: {
@@ -536,9 +548,9 @@ export const newHomeLangs = {
   },
   dashboardSection: {
     headerTitle: {
-      uz: "<span>Raqamli Profilingizni</span> Yaratish Uchun Tezkor, Kuchli va Aqlli Redaktor",
-      en: "The Fast, Powerful, And Intelligent Editor to Create <span>Your</span> <span>Digital Profile</span>",
-      ru: "Быстрый, Мощный и Интеллектуальный Редактор для Создания Вашего <span>Цифрового Профиля</span>",
+      uz: "<span>Raqamli profilingizni</span> yaratish uchun tezkor, kuchli va aqlli redaktor",
+      en: "The fast, powerful, and intelligent editor to create <span>your</span> <span>digital profile</span>",
+      ru: "Быстрый, мощный и интеллектуальный редактор для создания вашего <span>цифрового профиля</span>",
     },
     headerText: {
       uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
@@ -546,9 +558,9 @@ export const newHomeLangs = {
       ru: "Управляйте своим бизнесом и командой с помощью наших продуктов",
     },
     infoTitle: {
-      uz: "Bugun Internetdagi o'z burchagingizni <span>ishga tushiring<span/>",
-      en: "<span>Jumpstart</span> Your Corner of The Internet Today",
-      ru: "<span>Создайте</span> свою онлайн визитку в Интернете уже сегодня",
+      uz: "Bugun internetdagi o'z burchagingizni <span>ishga tushiring<span/>",
+      en: "<span>Jumpstart</span> your corner of the internet today",
+      ru: "<span>Создайте</span> свою онлайн визитку в интернете уже сегодня",
     },
     infoText: {
       uz: "Bizning mahsulotlarimiz bilan biznesingiz va jamoangizni nazorat qiling",
@@ -568,9 +580,9 @@ export const newHomeLangs = {
   },
   reviewsSection: {
     headerTitle: {
-      uz: "<span>Dunyo Bo'ylab</span> Millionlab Baxtli Mijozlar Bizga Ishonishdi",
-      en: "Trusted by Millions of Happy Customers from <span>Around the World</span>",
-      ru: "Нам Доверяют Миллионы Счастливых Клиентов <span>со Всего Мира</span>",
+      uz: "<span>Dunyo bo'ylab</span> millionlab baxtli mijozlar bizga ishonishdi",
+      en: "Trusted by millions of happy customers from <span>around the world</span>",
+      ru: "Нам доверяют миллионы счастливых клиентов <span>со всего мира</span>",
     },
     headerText: {
       uz: "Bu shunchaki so'zlar emas, quyida keltirilgan sharhlarning bir qismini ko'rib chiqing.",
@@ -633,9 +645,9 @@ export const newHomeLangs = {
   },
   pricingSection: {
     headerTitle: {
-      uz: "Qulay Narxlash Rejalari <span>Barcha Ehtiyojlaringizni</span> va Undan Ortig'ini Qondiradi",
-      en: "Flexible Pricing Plans to Fit <span>All of</span> <span>Your Needs<span> and More",
-      ru: "Гибкие Ценовые Планы, Отвечающие <span>Всем</span> <span>Вашим Потребностям</span> и Даже Больше",
+      uz: "Qulay narxlash rejalari <span>barcha ehtiyojlaringizni</span> va undan ortig'ini qondiradi",
+      en: "Flexible pricing plans to fit <span>all of</span> <span>your needs<span> and more",
+      ru: "Гибкие ценовые планы, отвечающие <span>всем</span> <span>вашим потребностям</span> и даже больше",
     },
     headerText: {
       uz: "Quyida sizga eng mos keladigan rejani toping.",
@@ -691,46 +703,46 @@ export const newHomeLangs = {
     features: {
       free: [
         {
-          uz: "Tranzaksiya Komissiyalarisiz",
-          en: "No Transaction Fees",
-          ru: "Никаких Комиссий за Транзакцию",
+          uz: "Tranzaksiya komissiyalarisiz",
+          en: "No transaction fees",
+          ru: "Никаких комиссий за транзакцию",
         },
         {
           uz: "Bepul xalqaro transferlar",
-          en: "Free International Transfers",
-          ru: "Бесплатные Международные Переводы",
+          en: "Free international transfers",
+          ru: "Бесплатные международные переводы",
         },
         {
           uz: "Asosiy tushunchalar",
-          en: "Basic Insights",
+          en: "Basic insights",
           ru: "Основные сведения",
         },
       ],
       premium: [
         {
-          uz: "Bepuldagi Hammasi",
-          en: "Everything in Free",
-          ru: "Все на Бесплатном",
+          uz: "Bepuldagi hammasi",
+          en: "Everything in free",
+          ru: "Все на бесплатном",
         },
         {
-          uz: "Kartani Bepul Yetkazib Berish",
-          en: "Free Card Delivery",
-          ru: "Бесплатная Доставка Карты",
+          uz: "Kartani bepul yetkazib berish",
+          en: "Free card delivery",
+          ru: "Бесплатная доставка карты",
         },
         {
-          uz: "Kengaytirilgan Tahlil",
-          en: "Advanced Analytics",
-          ru: "Расширенная Аналитика",
+          uz: "Kengaytirilgan tahlil",
+          en: "Advanced analytics",
+          ru: "Расширенная аналитика",
         },
         {
-          uz: "Ustuvor Qo'llab-Quvvatlash",
-          en: "Priority Support",
-          ru: "Приоритетная Поддержка",
+          uz: "Ustuvor qo'llab-quvvatlash",
+          en: "Priority support",
+          ru: "Приоритетная поддержка",
         },
         {
-          uz: "Yangi Funksiyalarga Erta Kirish",
-          en: "Early Access to New Features",
-          ru: "Ранний Доступ к Новым Функциям",
+          uz: "Yangi funksiyalarga erta kirish",
+          en: "Early access to new features",
+          ru: "Ранний доступ к новым функциям",
         },
       ],
     },
@@ -749,9 +761,9 @@ export const newHomeLangs = {
   },
   faqsSection: {
     headerTitle: {
-      uz: "Tez-Tez So'raladigan <span>Savollar</span>",
-      en: "Frequently Asked <span>Questions</span>",
-      ru: "Часто Задаваемые <span>Вопросы</span>",
+      uz: "Tez-tez so'raladigan <span>savollar</span>",
+      en: "Frequently asked <span>questions</span>",
+      ru: "Часто задаваемые <span>вопросы</span>",
     },
     headerText: {
       uz: "Sizni qiziqtirgan savollarga quyida javob toping.",
@@ -761,33 +773,33 @@ export const newHomeLangs = {
   },
   getStartedSection: {
     headerTitle: {
-      uz: "Kredit Karta Talab Qilinmaydigan Holda <span>Mutlaqo Bepul</span> Boshlang",
-      en: "Get Started <span>Completely for Free</span> with No Credit Card Required",
-      ru: "Начните <span>Совершенно Бесплатно</span> Без Необходимости Использования Кредитной Карты",
+      uz: "Kredit karta talab qilinmaydigan holda <span>mutlaqo bepul</span> boshlang",
+      en: "Get started <span>completely for free</span> with no credit card required",
+      ru: "Начните <span>совершенно бесплатно</span> без необходимости использования кредитной карты",
     },
     headerText: {
-      uz: "Ilovamizni 30 kun davomida butunlay bepul sinab ko'rishingiz mumkin.",
-      en: "You can try out our app completely for free for 30 days.",
-      ru: "Вы можете опробовать наше приложение совершенно бесплатно в течение 30 дней.",
+      uz: "Ilovamizni butunlay bepul sinab ko'rishingiz mumkin.", // 30 kun davomida
+      en: "You can try out our app completely for free.", // for 30 days
+      ru: "Вы можете использовать наше приложение совершенно бесплатно.",
     },
     getStartedBtns: {
       download: {
-        uz: "Tekinga Yuklab Olish",
-        en: "Download For Free",
-        ru: "Скачать Бесплатно",
+        uz: "Kirish",
+        en: "Log in",
+        ru: "Войти",
       },
       demo: {
-        uz: "Demoga Ruxsat Olish",
-        en: "Request a Demo",
-        ru: "Запросить Демо",
+        uz: "Bepul boshlash",
+        en: "Get started for free",
+        ru: "Начать бесплатно",
       },
     },
   },
   footerSection: {
     footerRights: {
-      uz: "Barcha Huquqlar Himoyalangan",
-      en: "All Rights Reserved.",
-      ru: "Все Права Защищены.",
+      uz: "Barcha huquqlar himoyalangan",
+      en: "All rights reserved.",
+      ru: "Все права защищены.",
     },
     footerColumns: [
       {
@@ -850,9 +862,9 @@ export const newHomeLangs = {
       },
       {
         columnTitle: {
-          uz: "Yuridik",
-          en: "Legal",
-          ru: "Юридический",
+          uz: "Manbalar",
+          en: "Resources",
+          ru: "Ресурсы",
         },
         columnLinks: [
           {
