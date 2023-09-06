@@ -479,7 +479,7 @@ export const newHomeLangs = {
         infoText: {
           uz: "Keraksiz qog'oz biznes kartalari bilan xayrlashing va barqarorlik inqilobiga qo'shiling. Bizning mahsulotimiz bilan siz o'zingizning profil ma'lumotlaringizni darhol ulashishingiz mumkin, bu sizning onlayn faoliyatingizni ekologiyaga zararsiz va samarali qiladi.",
           en: "Say goodbye to unnecessary paper business cards and join the sustainability revolution. With our product, you can instantly share your profile information, making your online experience green and efficient.",
-          ru: "Попрощайтесь с ненужными бумажными визитками и присоединитесь к революции устойчивого развития. С помощью нашего продукта вы можете мгновенно обмениваться информацией своего профиля, делая работу в сети экологичной и эффективной.",
+          ru: "Попрощайтесь с ненужными бумажными визитками и присоединитесь к революции устойчивого развития. С помощью нашего продукта вы можете мгновенно обмениваться информацией своего профиля. Делая работу в сети экологичной и эффективной.",
         },
       },
       {
