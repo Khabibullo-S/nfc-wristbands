@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../assets/css/adminDash.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { $authHost, useTokenRefresh } from "../../http";
 import { adminRoute, companyRoute, polyRoute, userRoute } from "../../routs";
@@ -47,11 +47,6 @@ const Admin = observer(() => {
   const [currentUser, setCurrentUser] = useState([]);
   const [User, setUser] = useState({});
   const [activeNav, setActiveNav] = useState("1");
-  const [activeSidebarItem, setActiveSidebarItem] = useState(null);
-
-  const handleSidebarItemClick = (item) => {
-    setActiveSidebarItem(item);
-  };
 
   const handleNavBtnClick = (key) => {
     setActiveNav(key);
@@ -105,106 +100,72 @@ const Admin = observer(() => {
             </div>
             <div className="sidebar__navigation">
               {typeUser() === "REGULAR" && (
-                <ul>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "profile" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("profile")}
-                  >
-                    <Link to={PROFILE_USER}>
+                <nav className="sidebar-navItem">
+                  <li>
+                    <NavLink to={PROFILE_USER}>
                       <FontAwesomeIcon icon={faUser} size="lg" />
                       <p>Profile</p>
-                    </Link>
+                    </NavLink>
                   </li>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "orders" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("orders")}
-                  >
-                    <Link to={ORDER_USER}>
+                  <li>
+                    <NavLink to={ORDER_USER}>
                       <FontAwesomeIcon icon={faWallet} size="lg" />
                       <p>Orders </p>
-                    </Link>
+                    </NavLink>
                   </li>
-                </ul>
+                </nav>
               )}
               {typeUser() === "ADMIN" && (
-                <ul>
+                <nav className="sidebar-navItem">
                   <li>
-                    <Link to={PROFILE_ADMIN}>
+                    <NavLink to={PROFILE_ADMIN}>
                       Profile <UserOutlined />
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to={STATISTIC}>
+                    <NavLink to={STATISTIC}>
                       Statistic <PieChartOutlined />
-                    </Link>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <Link to={EDIT_ALL_USER}>
+                    <NavLink to={EDIT_ALL_USER}>
                       Edit <UsergroupAddOutlined />
-                    </Link>
+                    </NavLink>
                   </li>
-                </ul>
+                </nav>
               )}
               {typeUser() === "COMPANY" && (
-                <ul>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "profile" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("profile")}
-                  >
-                    <Link to={`${PROFILE_COMPANY}`}>
-                      {/* <UserOutlined /> */}
+                <nav className="sidebar-navItem">
+                  <li>
+                    <NavLink to={`${PROFILE_COMPANY}`}>
                       <FontAwesomeIcon icon={faWallet} size="lg" />
                       <p>Orders </p>
-                    </Link>
+                    </NavLink>
                   </li>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "usersList" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("usersList")}
-                  >
-                    <Link to={USER_LIST}>
-                      {/* <UsergroupAddOutlined /> */}
+                  <li>
+                    <NavLink to={USER_LIST}>
                       <FontAwesomeIcon icon={faUsers} size="lg" />
                       <p>Users list </p>
-                    </Link>
+                    </NavLink>
                   </li>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "orders" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("orders")}
-                  >
-                    <Link to={ORDERS_MANAGER}>
-                      {/* <DollarOutlined /> */}
+                  <li>
+                    <NavLink to={ORDERS_MANAGER}>
                       <FontAwesomeIcon icon={faMoneyCheckDollar} size="lg" />
                       <p>Manager's order</p>
-                    </Link>
+                    </NavLink>
                   </li>
-                </ul>
+                </nav>
               )}
               {typeUser() === "POLYGRAPHY" && (
-                <ul>
-                  <li
-                    className={`sidebar-navItem ${
-                      activeSidebarItem === "orders" ? "active" : ""
-                    }`}
-                    onClick={() => handleSidebarItemClick("orders")}
-                  >
-                    <Link to={GET_ORDERS}>
-                      {/* <DollarOutlined /> */}
+                <nav className="sidebar-navItem">
+                  <li>
+                    <NavLink to={GET_ORDERS}>
                       <FontAwesomeIcon icon={faWallet} size="lg" />
                       <p>Orders </p>
-                    </Link>
+                    </NavLink>
                   </li>
-                </ul>
+                </nav>
               )}
             </div>
           </div>

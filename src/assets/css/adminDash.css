@@ -17,9 +17,6 @@
   padding-top: 40px;
   overflow: auto;
   overflow-x: hidden;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* height: calc(100vh - 60px); */
 }
 .admin__info-content {
   flex-grow: 1;
@@ -46,10 +43,6 @@
   background: #bfbcbc;
   width: 10px;
 }
-
-/* .admin__info-content {
-  padding: 20px 40px 40px 110px;
-} */
 
 .admin__blanc {
   background-color: white;
@@ -146,26 +139,14 @@
 }
 
 .sidebar-navItem {
-  padding: 10px;
+  /* padding: 10px; */
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: center;
 }
-/* use it on media with 2 blocks */
-/* .sidebar-navItem.active::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2px;
-  height: 30px;
-  background-color: blue;
-  border-radius: 2px;
-} */
 
-li.sidebar-navItem {
+.sidebar-navItem li {
   list-style: none;
 }
 
@@ -228,7 +209,6 @@ li.sidebar-navItem {
 .sidebar-admin {
   background: #fff;
   box-shadow: 2px 2px 8px #bfbcbc;
-  color: white;
   z-index: 6;
   position: fixed;
   bottom: 0;
@@ -253,7 +233,12 @@ li.sidebar-navItem {
   /* flex-direction: column;
   margin-top: 40px; */
 }
-.sidebar-content ul li {
+/* .sidebar-content ul li {
+  padding: 10px 0;
+  border-top: rgba(224, 224, 224, 0.25) 1px solid;
+  width: 100%;
+} */
+.sidebar-content nav li {
   padding: 10px 0;
   border-top: rgba(224, 224, 224, 0.25) 1px solid;
   width: 100%;
@@ -275,18 +260,22 @@ li.sidebar-navItem {
   padding-inline-start: 0;
 }
 @media screen and (max-width: 992px) {
-  .sidebar__navigation ul {
+  /* .sidebar__navigation ul {
+    display: flex;
+    flex-direction: row;
+  } */
+  .sidebar__navigation nav {
     display: flex;
     flex-direction: row;
   }
 }
 
-.sidebar-content ul li {
+/* .sidebar-content ul li {
   color: grey;
 }
 .sidebar-content ul li a {
   color: grey;
-}
+} */
 .header-icon-nav {
   display: none;
   height: 100%;
@@ -301,10 +290,11 @@ li.sidebar-navItem {
 }
 .sidebar-admin.active {
   /* left: 0; */
-  width: 2px;
+  /* width: 2px;
   height: 8px;
-  background-color: #000;
+  background-color: #000; */
 }
+
 .admin__logout button {
   border: none;
   padding: 5px 11px;
@@ -321,11 +311,14 @@ li.sidebar-navItem {
   align-items: center;
 }
 
-.sidebar-content li a:focus {
-  color: blue;
+.sidebar-content li a {
+  color: grey;
 }
 .sidebar-content li a:hover {
-  color: blue;
+  color: rgb(93, 93, 224);
+}
+.sidebar-content li .active {
+  color: rgb(217, 58, 58);
 }
 
 .row-stats {
@@ -465,7 +458,7 @@ li.sidebar-navItem {
     position: relative;
   }
 
-  .sidebar-content ul {
+  .sidebar-content nav {
     margin-top: 40px;
   }
 
