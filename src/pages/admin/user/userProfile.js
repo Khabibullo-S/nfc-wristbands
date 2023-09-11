@@ -1,16 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { message } from "antd";
 import { $authHost } from "../../../http";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import {
-  Container,
-  Form,
-  Card,
-  Button,
-  Row,
-  Col,
-  FormGroup,
-} from "react-bootstrap";
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import "../../../assets/css/userProfile.css";
 
 const UserProfile = () => {
@@ -70,6 +62,7 @@ const UserProfile = () => {
         : currentUser.address.country,
     },
   };
+
   useEffect(() => {
     const getData = async () => {
       const res = await $authHost.get(
@@ -79,6 +72,7 @@ const UserProfile = () => {
     };
     getData();
   }, []);
+
   const handleSend = async () => {
     if (sendProf.password === "") {
       messageApi.open({
@@ -262,14 +256,18 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.work_info.org}`}
+              label={`${
+                currentUser.work_info ? currentUser.work_info.org : ""
+              }`}
               required
               className="mb-4"
               style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`Organization:${dataIndex.work_info.org}`}
+                placeholder={`Organization:${
+                  currentUser.work_info ? currentUser.work_info.org : ""
+                }`}
                 onChange={(e) => {
                   setSendProf({
                     ...sendProf,
@@ -285,14 +283,18 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.work_info.role}`}
+              label={`${
+                currentUser.work_info ? currentUser.work_info.role : ""
+              }`}
               required
               className="mb-4"
               style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`Role: ${dataIndex.work_info.role}`}
+                placeholder={`Role: ${
+                  currentUser.work_info ? currentUser.work_info.role : ""
+                }`}
                 onChange={(e) => {
                   setSendProf({
                     ...sendProf,
@@ -310,21 +312,26 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.address.country}`}
+              label={`${
+                currentUser.work_info ? currentUser.address.country : ""
+              }`}
               required
               className="mb-4"
-              style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`Country: ${dataIndex.address.country}`}
-                onChange={(e) => {
-                  setSendProf({
-                    ...sendProf,
-                    address: { ...sendProf.address, country: e.target.value },
-                  });
-                }}
-                style={{ overflow: "hidden" }}
+                placeholder={`Country: ${
+                  currentUser.work_info ? currentUser.address.country : ""
+                }`}
+                onChange={(e) =>
+                  setSendProf((prevState) => ({
+                    ...prevState,
+                    address: {
+                      ...prevState.address,
+                      country: e.target.value,
+                    },
+                  }))
+                }
               />
             </FloatingLabel>
           </Col>
@@ -335,18 +342,24 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.address.city}`}
+              label={`${currentUser.address ? currentUser.address.city : ""}`}
               required
               className="mb-4"
-              style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`${dataIndex.address.city}`}
-                onChange={(e) => {
-                  dataIndex.address.city = e.target.value;
-                }}
-                style={{ overflow: "hidden" }}
+                placeholder={`City: ${
+                  currentUser.address ? currentUser.address.city : ""
+                }`}
+                onChange={(e) =>
+                  setSendProf((prevState) => ({
+                    ...prevState,
+                    address: {
+                      ...prevState.address,
+                      city: e.target.value,
+                    },
+                  }))
+                }
               />
             </FloatingLabel>
           </Col>
@@ -357,21 +370,24 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.address.region}`}
+              label={`${currentUser.address ? currentUser.address.region : ""}`}
               required
               className="mb-4"
-              style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`${dataIndex.address.region}`}
-                onChange={(e) => {
-                  setSendProf({
-                    ...sendProf,
-                    address: { ...sendProf.address, region: e.target.value },
-                  });
-                }}
-                style={{ overflow: "hidden" }}
+                placeholder={`Region: ${
+                  currentUser.address ? currentUser.address.region : ""
+                }`}
+                onChange={(e) =>
+                  setSendProf((prevState) => ({
+                    ...prevState,
+                    address: {
+                      ...prevState.address,
+                      region: e.target.value,
+                    },
+                  }))
+                }
               />
             </FloatingLabel>
           </Col>
@@ -380,21 +396,24 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${dataIndex.address.street}`}
+              label={`${currentUser.address ? currentUser.address.street : ""}`}
               required
               className="mb-4"
-              style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`${dataIndex.address.street}`}
-                onChange={(e) => {
-                  setSendProf({
-                    ...sendProf,
-                    address: { ...sendProf.address, street: e.target.value },
-                  });
-                }}
-                style={{ overflow: "hidden" }}
+                placeholder={`Street: ${
+                  currentUser.address ? currentUser.address.street : ""
+                }`}
+                onChange={(e) =>
+                  setSendProf((prevState) => ({
+                    ...prevState,
+                    address: {
+                      ...prevState.address,
+                      street: e.target.value,
+                    },
+                  }))
+                }
               />
             </FloatingLabel>
           </Col>

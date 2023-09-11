@@ -1,20 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../../assets/css/adminDash.css";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { $authHost, useTokenRefresh } from "../../http";
 import { adminRoute, companyRoute, polyRoute, userRoute } from "../../routs";
 import {
-  AntDesignOutlined,
-  DollarOutlined,
-  MenuUnfoldOutlined,
   PieChartOutlined,
-  QuestionCircleOutlined,
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import {
-  ADMIN_ROUTE,
   EDIT_ALL_USER,
   GET_ORDERS,
   ORDER_USER,
@@ -25,9 +20,7 @@ import {
   STATISTIC,
   USER_LIST,
 } from "../../utils/consts";
-import { getUser_Profile, logOut } from "../../http/userAPI";
-import { Layout } from "antd";
-import { Container } from "react-bootstrap";
+import { logOut } from "../../http/userAPI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -41,7 +34,6 @@ import {
   faUsers,
   faMoneyCheckDollar,
 } from "@fortawesome/free-solid-svg-icons";
-const { Header, Footer, Sider, Content } = Layout;
 
 const Admin = observer(() => {
   const [currentUser, setCurrentUser] = useState([]);
