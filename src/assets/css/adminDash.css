@@ -5,6 +5,7 @@
 .admin__card {
   display: none;
 }
+
 .hidden {
   display: none;
 }
@@ -54,6 +55,12 @@
   margin: 10px;
   display: grid;
   grid-template-rows: 1fr 0.2fr 1fr;
+  position: relative;
+}
+.admin__card-copyURL {
+  position: absolute;
+  top: -65px;
+  left: -95px;
 }
 .admin__card-photo {
   display: grid;

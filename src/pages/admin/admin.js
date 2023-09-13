@@ -9,6 +9,10 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+
+import { Button, message, Space } from "antd";
+import ClipboardJS from "clipboard";
+
 import {
   EDIT_ALL_USER,
   GET_ORDERS,
@@ -72,6 +76,35 @@ const Admin = observer(() => {
   useEffect(() => {
     typeUser();
   }, []);
+
+  const CopytURLNotification = () => {
+    const [messageApi, contextHolder] = message.useMessage();
+
+    useEffect(() => {
+      const clipboard = new ClipboardJS(".copy-url-button");
+
+      clipboard.on("success", () => {
+        messageApi.success("URL успешно скопирован");
+      });
+
+      return () => {
+        clipboard.destroy();
+      };
+    }, [messageApi]);
+    return (
+      <>
+        {contextHolder}
+        <Space>
+          <Button
+            className="copy-url-button"
+            data-clipboard-text={`https://nfcglobaltech.uz/contact/${User.username}`}
+          >
+            Copy URL: contact/{User.first_name}
+          </Button>
+        </Space>
+      </>
+    );
+  };
 
   return (
     <div
@@ -195,6 +228,7 @@ const Admin = observer(() => {
       {typeUser() !== "POLYGRAPHY" && (
         <div className="admin__card">
           <div className="admin__blanc">
+            <div className="admin__card-copyURL">{CopytURLNotification()}</div>
             <div className="admin__card-photo">
               <div className="admin__card-circle">
                 {/* <div className="rectangle"></div> */}
