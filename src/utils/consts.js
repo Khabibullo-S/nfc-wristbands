@@ -12,7 +12,7 @@ export const LAYOUT = "/layout";
 //user route
 export const PROFILE_USER = "Profile";
 export const ORDER_USER = "userOrder";
-export const DEVISE_USER = "userDevise";
+export const THEME_USER = "userTheme";
 
 //admin route
 export const STATISTIC = "statistic";

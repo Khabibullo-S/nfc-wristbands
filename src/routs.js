@@ -17,7 +17,7 @@ import {
   REGISTRATION_ROUTE,
   STATISTIC,
   USER_LIST,
-  NEW_HOME_ROUTE, // new home
+  NEW_HOME_ROUTE, THEME_USER, // new home
 } from "./utils/consts";
 import Admin from "./pages/admin/admin";
 import Home from "./pages/home";
@@ -33,6 +33,7 @@ import EditAllUser from "./pages/admin/admin/editAllUser";
 import Statistics from "./pages/admin/admin/statistics";
 import PolyGetAll from "./pages/admin/polygraph/polyGetAll";
 import NewHome from "./pages/newHome";
+import UserTheme from "./pages/admin/user/userTheme";
 
 export const publicRoute = [
   {
@@ -66,6 +67,10 @@ export const userRoute = [
   {
     path: ORDER_USER,
     Component: <UserOrder />,
+  },
+  {
+    path: THEME_USER,
+    Component: <UserTheme />,
   },
 ];
 
