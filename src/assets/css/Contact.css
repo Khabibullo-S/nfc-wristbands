@@ -165,8 +165,6 @@
 }
 
 .navbar-button {
-  /* color: gray; */
-  color: var(--contact-text-main-color);
   padding: 6px 24px;
   cursor: pointer;
 }

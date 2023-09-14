@@ -1,13 +1,10 @@
 import React from "react";
 import {
   ADMIN_ROUTE,
-  COMPANY_DEVISE,
-  DEVISE_POLY,
-  DEVISE_USER,
+
   EDIT_ALL_USER,
   GET_ORDERS,
   HOME_ROUTE,
-  LAYOUT,
   LOGIN_ROUTE,
   ORDER_USER,
   ORDERS_MANAGER,
@@ -17,7 +14,7 @@ import {
   REGISTRATION_ROUTE,
   STATISTIC,
   USER_LIST,
-  NEW_HOME_ROUTE, THEME_USER, // new home
+  NEW_HOME_ROUTE, THEME_USER, THEME_COMPANY, // new home
 } from "./utils/consts";
 import Admin from "./pages/admin/admin";
 import Home from "./pages/home";
@@ -34,6 +31,7 @@ import Statistics from "./pages/admin/admin/statistics";
 import PolyGetAll from "./pages/admin/polygraph/polyGetAll";
 import NewHome from "./pages/newHome";
 import UserTheme from "./pages/admin/user/userTheme";
+import CompanyTheme from "./pages/admin/company/companyTheme";
 
 export const publicRoute = [
   {
@@ -86,6 +84,10 @@ export const companyRoute = [
   {
     path: USER_LIST,
     Component: <CompanyUserList />,
+  },
+  {
+    path: THEME_COMPANY,
+    Component: <CompanyTheme />,
   },
 ];
 

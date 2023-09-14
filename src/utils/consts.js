@@ -23,7 +23,7 @@ export const PROFILE_ADMIN = "Profile";
 export const PROFILE_COMPANY = "Profile";
 export const USER_LIST = "userList";
 export const ORDERS_MANAGER = "companyOrders";
-export const COMPANY_DEVISE = "companyDevise";
+export const THEME_COMPANY = "companyTheme";
 
 //polygraph
 export const GET_ORDERS = "getOrders";

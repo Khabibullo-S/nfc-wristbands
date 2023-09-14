@@ -81,20 +81,7 @@ const Login = () => {
   };
 
 
-  const resetPassword = async ()=>{
-    console.log(resetUser)
-      if (resetUser){
-          try {
-            const res = await $host.post("api/v2/auth/reset-password/"+resetUser+"/")
-            console.log(res)
-          } catch (e){
-console.log(e)
-          }
 
-      }else {
-        console.log(false)
-      }
-  }
   return (
     <div
       style={{
@@ -153,26 +140,7 @@ console.log(e)
               Sign up
             </Link>
           </span>
-          <Button type="primary" onClick={showModal}>
-            Open Modal
-          </Button>
 
-
-          <Modal title="Reset Password" open={isModalOpen}  onCancel={handleCancel}>
-
-            <InputGroup className="mb-3" style={{ height: "55px" }}>
-              <InputGroup.Text id="basic-addon1">
-                <UserOutlined />
-              </InputGroup.Text>
-              <Form.Control
-                  placeholder={`Username`}
-                  aria-label={`Username`}
-                  aria-describedby={`Username`}
-                  onChange={(e) => setResetUser(e.target.value)}
-              />
-            </InputGroup>
-            <Button onClick={resetPassword}>Send</Button>
-          </Modal>
 
         </Col>
       </Row>

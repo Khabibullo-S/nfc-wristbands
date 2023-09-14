@@ -15,11 +15,21 @@ import {message} from "antd";
 import {registration} from "../http/userAPI";
 import {$host} from "../http";
 
-function Registration(props) {
+function Registration() {
     const [messageApi, contextHolder] = message.useMessage();
-
-    const [regData, setRegData] = useState([]);
+    const storedName = localStorage.getItem('name');
+    const [regData, setRegData] = useState({username: storedName || ''});
     const [invalidConfirm, setInvalidConfirm] = useState("");
+console.log(regData)
+    const handleInputChange = (e) => {
+        const updatedName = e.target.value;
+
+        // localStorage ga yangi malumotni saqlash
+        localStorage.setItem('name', updatedName);
+
+        // regData ni yangilash
+        setRegData({ ...regData, username: updatedName });
+    };
     let sendData = {
         username: regData.username,
         email: regData.email ? regData.email : "",
@@ -146,9 +156,7 @@ function Registration(props) {
                                             aria-label={`Username`}
                                             aria-describedby={`Username`}
                                             value={regData.username}
-                                            onChange={(e) => {
-                                                setRegData({...regData, username: e.target.value});
-                                            }}
+                                            onChange={handleInputChange}
                                         />
                                     </InputGroup>
                                 </Col>

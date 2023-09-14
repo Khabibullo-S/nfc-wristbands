@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useHistory } from "react";
+import React, { useState, useEffect, useRef, useHistory,useMessage } from "react";
 import Select from "react-select";
 import Carousel from "react-bootstrap/Carousel";
 import "../assets/css/home.css";
@@ -7,6 +7,7 @@ import Wpsay from "../component/wpsay";
 import VideoPanel from "../component/videoPanel";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE, USER_CONTACT } from "../utils/consts";
 import { Link } from "react-router-dom";
+import { message  } from "antd";
 import {
   createLangs,
   faqLangs,
@@ -24,6 +25,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Registration from "./registration";
 
 //review slider settings
 const settings = {
@@ -196,6 +198,7 @@ const Home = () => {
   );
   const [openLanguageSelector, setOpenLanguageSelector] = useState(false);
   const [yournameInput, setYournameInput] = useState("");
+    const [messageApi, contextHolder] = message.useMessage();
 
   // Create a ref for the input element
   const inputRef = useRef();
@@ -209,7 +212,17 @@ const Home = () => {
   const handleYournameChange = (event) => {
     setYournameInput(event.target.value);
   };
-
+const sendNameInput = () => {
+  if (yournameInput === '' || !yournameInput){
+      messageApi.open({
+          type: "error",
+          content: "username is required",
+      });
+  }else {
+    localStorage.setItem('name',yournameInput)
+    window.location.assign('/registration')
+  }
+}
   useEffect(() => {
     // save pageLang to localStorage under "language" key
     localStorage.setItem("language", pageLang);
@@ -270,6 +283,7 @@ const Home = () => {
 
   return (
     <>
+        {contextHolder}
       <div className="Home">
         <div className="Home-container">
           {/* NAVBAR */}
@@ -748,7 +762,7 @@ const Home = () => {
                       onClick={handleInputBtnClick}
                       className="input-btn first-btn-style"
                     >
-                      <span class="unit">biosite.uz/</span>
+                      <span class="unit">nfcglobaltech,uz/</span>
                       <input
                         ref={inputRef}
                         type="text"
@@ -762,7 +776,7 @@ const Home = () => {
                         onChange={handleYournameChange}
                       />
                     </div>
-                    <div className="demo-btn second-btn-style">
+                    <div onClick={sendNameInput} className="demo-btn second-btn-style">
                       {newHomeLangs.dashboardSection.claimBtn[pageLang]}
                     </div>
                   </div>

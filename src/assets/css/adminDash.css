@@ -6,7 +6,18 @@
   display: none;
 }
 .activeTheme{
-  filter: drop-shadow(0 4px 5px #0a53be);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.29);
+  border-radius: 20px;
+}
+.theme-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.themeBtn{
+  width: 80%;
+  margin-bottom: 10px;
 }
 .theme-box{
   width: 100%;
