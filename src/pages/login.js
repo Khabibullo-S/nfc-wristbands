@@ -9,17 +9,36 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import { $host } from "../http";
+import {$authHost, $host} from "../http";
 import { observer } from "mobx-react-lite";
 import { useUser } from "../constructor/UserContext";
 import CryptoJS from "crypto-js";
-import { message } from "antd";
+import { message,Modal  } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import Reset_Password_Modal from "../component/Modal/reset_Password_Modal";
 
 const Login = () => {
   const [username, setUsername] = useState("");
+  const [resetUser, setResetUser] = useState("");
   const [password, setPassword] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+
+
+
   const click = async () => {
     if (!username) {
       messageApi.open({
@@ -61,6 +80,21 @@ const Login = () => {
     }
   };
 
+
+  const resetPassword = async ()=>{
+    console.log(resetUser)
+      if (resetUser){
+          try {
+            const res = await $host.post("api/v2/auth/reset-password/"+resetUser+"/")
+            console.log(res)
+          } catch (e){
+console.log(e)
+          }
+
+      }else {
+        console.log(false)
+      }
+  }
   return (
     <div
       style={{
@@ -119,6 +153,27 @@ const Login = () => {
               Sign up
             </Link>
           </span>
+          <Button type="primary" onClick={showModal}>
+            Open Modal
+          </Button>
+
+
+          <Modal title="Reset Password" open={isModalOpen}  onCancel={handleCancel}>
+
+            <InputGroup className="mb-3" style={{ height: "55px" }}>
+              <InputGroup.Text id="basic-addon1">
+                <UserOutlined />
+              </InputGroup.Text>
+              <Form.Control
+                  placeholder={`Username`}
+                  aria-label={`Username`}
+                  aria-describedby={`Username`}
+                  onChange={(e) => setResetUser(e.target.value)}
+              />
+            </InputGroup>
+            <Button onClick={resetPassword}>Send</Button>
+          </Modal>
+
         </Col>
       </Row>
     </div>

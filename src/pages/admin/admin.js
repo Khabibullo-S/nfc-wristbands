@@ -199,7 +199,7 @@ const Admin = observer(() => {
                 </div>
             </div>
             {typeUser() !== "POLYGRAPHY" && (
-                <div className="admin__card">
+                <div className="admin__card admin_card-person">
                     <div className="admin__blanc">
                         <div className="admin__card-photo">
                             <div className="admin__card-circle">

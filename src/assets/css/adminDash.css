@@ -2,10 +2,19 @@
   display: grid;
   grid-template-columns: 1fr;
 }
-.admin__card {
+.admin_card-person {
   display: none;
 }
-
+.activeTheme{
+  filter: drop-shadow(0 4px 5px #0a53be);
+}
+.theme-box{
+  width: 100%;
+  height: 100%;
+}
+.activeText{
+  background: lightblue;
+}
 .hidden {
   display: none;
 }
@@ -110,6 +119,8 @@
   justify-content: space-around;
 }
 .navbar-btn {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   padding: 10px;
   cursor: pointer;
 }
