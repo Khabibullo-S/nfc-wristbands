@@ -801,6 +801,11 @@ export const newHomeLangs = {
       en: "All rights reserved.",
       ru: "Все права защищены.",
     },
+    soonText: {
+      uz: "soon",
+      en: "soon",
+      ru: "скоро",
+    },
     footerColumns: [
       {
         columnTitle: {

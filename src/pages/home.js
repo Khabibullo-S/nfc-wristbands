@@ -164,32 +164,39 @@ const footerLinks = [
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[0], //about
       link: "/about",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[1], //contact
       link: "/contact",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[2], //support
       link: "/support",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[3], //news
       link: "/news",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[4], //careers
       link: "/careers",
+      soon: true,
     },
   ],
   [
     {
       lang: newHomeLangs.footerSection.footerColumns[2].columnLinks[0], //privacy policy
       link: "/legal",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[2].columnLinks[1], //terms of service
       link: "/legal",
+      soon: true,
     },
   ],
 ];
@@ -1214,11 +1221,29 @@ const Home = () => {
                       </div>
                       <div className="footer-column-links">
                         {footerLinks[index].map((link) => (
-                          <div className="footer-column-link">
+                          <div
+                            className={`footer-column-link ${
+                              link.soon ? "link-soon" : ""
+                            }`}
+                          >
                             {link.scroll ? (
                               <a href={link.scroll}>{link.lang[pageLang]}</a>
                             ) : (
-                              <Link to={link.link}>{link.lang[pageLang]}</Link>
+                              <>
+                                {/* <Link to={link.link}>
+                                  {link.lang[pageLang]}
+                                </Link> */}
+                                <div className="linktxt-soon">
+                                  {link.lang[pageLang]}
+                                </div>
+                                <div className="link-soontxt">
+                                  {
+                                    newHomeLangs.footerSection.soonText[
+                                      pageLang
+                                    ]
+                                  }
+                                </div>
+                              </>
                             )}
                           </div>
                         ))}

@@ -1846,6 +1846,9 @@ body {
 .Home .footer-column-link {
   font-weight: 400;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .Home .footer-column-link:hover {
@@ -1854,4 +1857,27 @@ body {
 
 .Home .footer-column-link > a {
   all: unset;
+}
+
+.Home .link-soon:hover {
+  text-decoration: none !important;
+  cursor: default !important;
+}
+
+.Home .link-soontxt {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 0.7rem;
+  padding: 3px 5px;
+  color: #fff;
+  background-color: #a0a0a0;
+  border-radius: 11px;
+}
+
+.Home .linktxt-soon {
+  opacity: 0.7;
+}
+
+.Home .link-soontxt:hover {
+  text-decoration: none !important;
 }
