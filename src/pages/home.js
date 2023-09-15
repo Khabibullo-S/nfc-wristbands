@@ -1,7 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useHistory,
+  useMessage,
+} from "react";
 import Select from "react-select";
+import Carousel from "react-bootstrap/Carousel";
 import "../assets/css/home.css";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
+import Question from "../component/question";
+import Wpsay from "../component/wpsay";
+import VideoPanel from "../component/videoPanel";
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, USER_CONTACT } from "../utils/consts";
 import { Link } from "react-router-dom";
 import { message  } from "antd";
 import {
@@ -15,7 +25,9 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Registration from "./registration";
 
+//review slider settings
 const settings = {
   dots: true,
   arrows: false,
@@ -128,32 +140,39 @@ const footerLinks = [
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[0], //about
       link: "/about",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[1], //contact
       link: "/contact",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[2], //support
       link: "/support",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[3], //news
       link: "/news",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[1].columnLinks[4], //careers
       link: "/careers",
+      soon: true,
     },
   ],
   [
     {
       lang: newHomeLangs.footerSection.footerColumns[2].columnLinks[0], //privacy policy
       link: "/legal",
+      soon: true,
     },
     {
       lang: newHomeLangs.footerSection.footerColumns[2].columnLinks[1], //terms of service
       link: "/legal",
+      soon: true,
     },
   ],
 ];
@@ -168,7 +187,7 @@ const Home = () => {
   );
   const [openLanguageSelector, setOpenLanguageSelector] = useState(false);
   const [yournameInput, setYournameInput] = useState("");
-    const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage();
 
   // Create a ref for the input element
   const inputRef = useRef();
@@ -732,7 +751,7 @@ const sendNameInput = () => {
                       onClick={handleInputBtnClick}
                       className="input-btn first-btn-style"
                     >
-                      <span className="unit">nfcglobaltech.uz/</span>
+                      <span class="unit">nfcglobaltech.uz/</span>
                       <input
                         ref={inputRef}
                         type="text"
@@ -746,7 +765,10 @@ const sendNameInput = () => {
                         onChange={handleYournameChange}
                       />
                     </div>
-                    <div onClick={sendNameInput} className="demo-btn second-btn-style">
+                    <div
+                      onClick={sendNameInput}
+                      className="demo-btn second-btn-style"
+                    >
                       {newHomeLangs.dashboardSection.claimBtn[pageLang]}
                     </div>
                   </div>
@@ -1175,11 +1197,29 @@ const sendNameInput = () => {
                       </div>
                       <div className="footer-column-links">
                         {footerLinks[index].map((link) => (
-                          <div className="footer-column-link">
+                          <div
+                            className={`footer-column-link ${
+                              link.soon ? "link-soon" : ""
+                            }`}
+                          >
                             {link.scroll ? (
                               <a href={link.scroll}>{link.lang[pageLang]}</a>
                             ) : (
-                              <Link to={link.link}>{link.lang[pageLang]}</Link>
+                              <>
+                                {/* <Link to={link.link}>
+                                  {link.lang[pageLang]}
+                                </Link> */}
+                                <div className="linktxt-soon">
+                                  {link.lang[pageLang]}
+                                </div>
+                                <div className="link-soontxt">
+                                  {
+                                    newHomeLangs.footerSection.soonText[
+                                      pageLang
+                                    ]
+                                  }
+                                </div>
+                              </>
                             )}
                           </div>
                         ))}

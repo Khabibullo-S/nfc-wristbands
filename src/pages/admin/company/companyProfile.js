@@ -97,6 +97,25 @@ const CompanyProfile = () => {
       }
     }
   };
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+  const savePhotoToLocalStorage = () => {
+    if (selectedFile) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(selectedFile);
+      fileReader.onload = (event) => {
+        const dataURL = event.target.result;
+        localStorage.setItem("selectedPhoto", dataURL);
+        alert("Фото успешно добавлено.");
+      };
+    } else {
+      alert("Выберите фото перед сохранением.");
+    }
+  };
   return (
     <div>
       {contextHolder}
@@ -170,6 +189,15 @@ const CompanyProfile = () => {
                 }
               />
             </FloatingLabel>
+          </Col>
+        </Row>
+        <Row className="profile_image">
+          <Col>
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Profile Image</Form.Label>
+              <Form.Control type="file" onChange={handleFileChange} />
+            </Form.Group>
+            <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button>
           </Col>
         </Row>
         <Row>
