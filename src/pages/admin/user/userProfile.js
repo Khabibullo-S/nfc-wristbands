@@ -114,7 +114,7 @@ const UserProfile = () => {
       fileReader.onload = (event) => {
         const dataURL = event.target.result;
         localStorage.setItem("selectedPhoto", dataURL);
-        alert("Фото успешно добавлено в Local Storage.");
+        alert("Фото успешно добавлено.");
       };
     } else {
       alert("Выберите фото перед сохранением.");
