@@ -44,6 +44,25 @@ const Admin = observer(() => {
   const [User, setUser] = useState({});
   const [activeNav, setActiveNav] = useState("1");
 
+  // photoImageUpload
+  const [photoDataUrl, setPhotoDataUrl] = useState("");
+
+  useEffect(() => {
+    // Получите данные изображения из Local Storage
+    const storedPhoto = localStorage.getItem("selectedPhoto");
+
+    if (storedPhoto) {
+      setPhotoDataUrl(storedPhoto);
+    }
+  }, []);
+
+  useEffect(() => {
+    const storedPhoto = localStorage.getItem("photo");
+    if (storedPhoto) {
+      setPhotoDataUrl(storedPhoto);
+    }
+  }, []);
+
   const handleNavBtnClick = (key) => {
     setActiveNav(key);
   };
@@ -231,8 +250,11 @@ const Admin = observer(() => {
             <div className="admin__card-copyURL">{CopytURLNotification()}</div>
             <div className="admin__card-photo">
               <div className="admin__card-circle">
-                {/* <div className="rectangle"></div> */}
-                {User.first_name ? User.first_name[0] : <p>Loading...</p>}
+                {photoDataUrl ? (
+                  <img src={photoDataUrl} alt="Selected" />
+                ) : (
+                  <span> {User.first_name ? User.first_name[0] : "B"}</span>
+                )}
               </div>
               <div className="admin__card-fullName">
                 {/* <input placeholder="Full name" type="text"/> */}

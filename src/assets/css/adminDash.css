@@ -123,7 +123,7 @@
 .admin__card-input {
   /* height: 40px; */
 }
-.admin__card-circle {
+/* .admin__card-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -143,6 +143,46 @@
   height: 70px;
   border-radius: 50%;
   border: 5px solid white;
+} */
+
+.admin__card-circle img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.admin__card-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #898989;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  border: 5px solid #898989;
+  overflow: hidden;
+  position: relative;
+}
+
+.admin__card-circle img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.admin__card-circle::before,
+.admin__card-circle::after {
+  content: " ";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid white;
+  z-index: 0;
 }
 
 .sidebar-navItem {
@@ -322,10 +362,10 @@
   color: grey;
 }
 .sidebar-content li a:hover {
-  color: rgb(93, 93, 224);
+  color: rgb(217, 58, 58);
 }
 .sidebar-content li .active {
-  color: rgb(217, 58, 58);
+  color: rgb(93, 93, 224);
 }
 
 .row-stats {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { message } from "antd";
+import { Input, message } from "antd";
 import { $authHost } from "../../../http";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
@@ -101,6 +101,26 @@ const UserProfile = () => {
     }
   };
 
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+  const savePhotoToLocalStorage = () => {
+    if (selectedFile) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(selectedFile);
+      fileReader.onload = (event) => {
+        const dataURL = event.target.result;
+        localStorage.setItem("selectedPhoto", dataURL);
+        alert("Фото успешно добавлено в Local Storage.");
+      };
+    } else {
+      alert("Выберите фото перед сохранением.");
+    }
+  };
+
   return (
     <div className="userProfile">
       <div className="profile__header">
@@ -191,6 +211,15 @@ const UserProfile = () => {
         </Row>
         <Row>
           <Col>
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Profile Image</Form.Label>
+              <Form.Control type="file" onChange={handleFileChange} />
+            </Form.Group>
+            <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col style={{ marginTop: "20px" }}>
             <Form.Label htmlFor="basic-url">Email</Form.Label>
             <FloatingLabel
               controlId="floatingInput"
