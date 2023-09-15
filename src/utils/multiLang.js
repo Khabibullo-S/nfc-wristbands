@@ -9,7 +9,7 @@ export const videoPanelLangs = {
   connect: {
     uz: "Bir qadam bilan ulaning va ulashing!",
     en: "Connect and Share with a Single Tap!",
-    ru: "Подключайтесь и делитесь нажатием!",
+    ru: "Подключайтесь и делитесь касанием!",
   },
   startBtn: {
     uz: "Tekinga ulanish",
@@ -22,7 +22,7 @@ export const sliderLangs = {
   trustedBy: {
     uz: "Bizga ishonadigan sanoat peshqadamlari",
     en: "Trusted by industry leaders",
-    ru: "Доверяющие лидеры отрасли",
+    ru: "Нам доверяют",
   },
 };
 
@@ -172,9 +172,9 @@ export const goalLangs = {
     ru: "Наша цель — сделать наш мир зеленее, чем когда-либо!",
   },
   goalText: {
-    uz: "Bizning mahsulotimizdan foydalangan olgan holda yashil dunyoni yaratish missiyamizga qo'shiling. Isrof bo'luvchi qog'oz vizitkalar bilan xayrlashing va barqaror inqilobga (<-not sure about this one) qo'shiling. Bizning mahsulotimiz yordamida siz o'z profilingiz ma'lumotlarini bir zumda ulashishingiz mumkin, bu esa tarmoq bo'lib ishlashni ekologiyaga zararsiz va samarali qilish imkonini beradi. Siz o'z profilingizni osongina ulashish orqali atrof-muhitga ijobiy ta'sir ko'rsatishingiz mumkin.",
-    en: "Join us in our mission to create a greener world by embracing the our product. Say goodbye to wasteful paper business cards and join the sustainable revolution. With our product, you can instantly exchange your profile information, making networking eco-friendly and efficient. You can make a positive impact on the environment while effortlessly sharing your profile.",
-    ru: "Присоединяйтесь к нам в нашей миссии по созданию более зеленого мира, используя наш продукт. Попрощайтесь с ненужными бумажными визитными карточками и присоединяйтесь к устойчивой революции. С помощью нашего продукта вы можете мгновенно обмениваться данными своего профиля, делая работу в сети экологичной и эффективной. Вы можете оказать положительное влияние на окружающую среду, без особых усилий делясь своим профилем.",
+    uz: "Bizning mahsulotimizdan foydalangan olgan holda yashil dunyoni yaratish missiyamizga qo'shiling. Isrof bo'luvchi qog'oz vizitkalar bilan xayrlashing va barqaror inqilobga (<-not sure about this one) qo'shiling. Bizning mahsulotimiz yordamida siz o'z profilingiz ma'lumotlarini bir zumda ulashishingiz mumkin.",
+    en: "Join us in our mission to create a greener world by embracing the our product. Say goodbye to wasteful paper business cards and join the sustainable revolution. With our product, you can instantly exchange your profile information.",
+    ru: "Присоединяйтесь к нам в нашей миссии по созданию более зеленого мира, используя наш продукт. Попрощайтесь с ненужными бумажными визитными карточками и присоединяйтесь к устойчивой революции. С помощью нашего продукта вы можете мгновенно обмениваться данными своего профиля.",
   },
 };
 
@@ -511,7 +511,7 @@ export const newHomeLangs = {
       {
         infoTitle: {
           uz: "Auditoriyangizni <span>tahlil qiling</span> va izdoshlaringizni <span>jalb qiling</span>",
-          en: "<span>Analyze</span> your fudience and keep your followers <span>engaged</span>",
+          en: "<span>Analyze</span> your audience and keep your followers <span>engaged</span>",
           ru: "<span>Анализируйте</span> свою аудиторию и <span>поддерживайте интерес</span> подписчиков",
         },
         infoText: {
