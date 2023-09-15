@@ -33,6 +33,7 @@ const CompanyUserList = () => {
       city: "",
       country: "",
     },
+    theme:"whiteBlack",
     created_by: localStorage.getItem("uuid"),
   });
   const [updateUser, setUpdateUser] = useState({

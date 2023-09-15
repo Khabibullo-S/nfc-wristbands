@@ -1,21 +1,11 @@
-import React, { useState, useEffect, useRef, useHistory,useMessage } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Select from "react-select";
-import Carousel from "react-bootstrap/Carousel";
 import "../assets/css/home.css";
-import Question from "../component/question";
-import Wpsay from "../component/wpsay";
-import VideoPanel from "../component/videoPanel";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE, USER_CONTACT } from "../utils/consts";
+import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
 import { Link } from "react-router-dom";
 import { message  } from "antd";
 import {
-  createLangs,
   faqLangs,
-  footerLangs,
-  functionsLangs,
-  goalLangs,
-  launchLags,
-  navLangs,
   newHomeLangs,
 } from "../utils/multiLang";
 import Faq from "../component/faq";
@@ -25,9 +15,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Registration from "./registration";
 
-//review slider settings
 const settings = {
   dots: true,
   arrows: false,
@@ -55,25 +43,7 @@ const settings = {
     },
   ],
 };
-// const reviews = [
-//   {
-//     text: "This is one of the best apps I have ever tried! It offers everything modern app should have and the design is just outstanding - so easy to use!",
-//     author: "Josh Smith",
-//     title: "Sr. Product Designer",
-//   },
-//   {
-//     text: "I was really impressed when I found out about this app. At first I thought it wasn't for me, but after some time, I realized that it's one of the best apps I ever used.",
-//     author: "Samantha Johnsonith",
-//     title: "Digital Marketing Manager",
-//   },
-//   {
-//     text: "I would absolutely recommend this app to anybody who is looking to try something new and interesting as the features this app offers are just incredible.",
-//     author: "Paul Anderson",
-//     title: "CEO & Founder",
-//   },
-// ];
 
-// for language select
 const customComponents = {
   DropdownIndicator: () => null,
   IndicatorSeparator: () => null,
@@ -762,7 +732,7 @@ const sendNameInput = () => {
                       onClick={handleInputBtnClick}
                       className="input-btn first-btn-style"
                     >
-                      <span class="unit">nfcglobaltech,uz/</span>
+                      <span className="unit">nfcglobaltech.uz/</span>
                       <input
                         ref={inputRef}
                         type="text"

@@ -14,7 +14,7 @@ import {
   REGISTRATION_ROUTE,
   STATISTIC,
   USER_LIST,
-  NEW_HOME_ROUTE, THEME_USER, THEME_COMPANY, // new home
+  NEW_HOME_ROUTE, THEME_USER, THEME_COMPANY, ANALYTICS_USER, ANALYTICS_COMPANY, // new home
 } from "./utils/consts";
 import Admin from "./pages/admin/admin";
 import Home from "./pages/home";
@@ -32,6 +32,8 @@ import PolyGetAll from "./pages/admin/polygraph/polyGetAll";
 import NewHome from "./pages/newHome";
 import UserTheme from "./pages/admin/user/userTheme";
 import CompanyTheme from "./pages/admin/company/companyTheme";
+import UserAnalytics from "./pages/admin/user/userAnalytics";
+import CompanyAnalytics from "./pages/admin/company/companyAnalytics";
 
 export const publicRoute = [
   {
@@ -70,6 +72,10 @@ export const userRoute = [
     path: THEME_USER,
     Component: <UserTheme />,
   },
+  {
+    path: ANALYTICS_USER,
+    Component: <UserAnalytics />,
+  },
 ];
 
 export const companyRoute = [
@@ -88,6 +94,10 @@ export const companyRoute = [
   {
     path: THEME_COMPANY,
     Component: <CompanyTheme />,
+  },
+  {
+    path: ANALYTICS_COMPANY,
+    Component: <CompanyAnalytics />,
   },
 ];
 

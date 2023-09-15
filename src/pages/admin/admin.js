@@ -8,9 +8,11 @@ import {
     PieChartOutlined,
     UsergroupAddOutlined,
     UserOutlined,
-    BgColorsOutlined
+    BgColorsOutlined,
 } from "@ant-design/icons";
 import {
+    ANALYTICS_COMPANY,
+    ANALYTICS_USER,
     EDIT_ALL_USER,
     GET_ORDERS,
     ORDER_USER,
@@ -119,6 +121,12 @@ const Admin = observer(() => {
                                             <p>Orders </p>
                                         </NavLink>
                                     </li>
+                                    {/*<li>*/}
+                                    {/*    <NavLink to={ANALYTICS_USER}>*/}
+                                    {/*        <PieChartOutlined />*/}
+                                    {/*        <p>Analytics </p>*/}
+                                    {/*    </NavLink>*/}
+                                    {/*</li>*/}
                                 </nav>
                             )}
                             {typeUser() === "ADMIN" && (
@@ -167,6 +175,12 @@ const Admin = observer(() => {
                                             <p>Theme</p>
                                         </NavLink>
                                     </li>
+                                    {/*<li>*/}
+                                    {/*    <NavLink to={ANALYTICS_COMPANY}>*/}
+                                    {/*        <PieChartOutlined />*/}
+                                    {/*        <p>Analytics</p>*/}
+                                    {/*    </NavLink>*/}
+                                    {/*</li>*/}
                                 </nav>
                             )}
                             {typeUser() === "POLYGRAPHY" && (

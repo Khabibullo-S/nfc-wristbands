@@ -1,4 +1,6 @@
 //public route
+import UserAnalytics from "../pages/admin/user/userAnalytics";
+
 export const HOME_ROUTE = "/";
 export const LOGIN_ROUTE = "/login";
 export const REGISTRATION_ROUTE = "/registration";
@@ -13,6 +15,7 @@ export const LAYOUT = "/layout";
 export const PROFILE_USER = "Profile";
 export const ORDER_USER = "userOrder";
 export const THEME_USER = "userTheme";
+export const ANALYTICS_USER = "userAnalytics";
 
 //admin route
 export const STATISTIC = "statistic";
@@ -24,6 +27,7 @@ export const PROFILE_COMPANY = "Profile";
 export const USER_LIST = "userList";
 export const ORDERS_MANAGER = "companyOrders";
 export const THEME_COMPANY = "companyTheme";
+export const ANALYTICS_COMPANY = "companyAnalytics";
 
 //polygraph
 export const GET_ORDERS = "getOrders";
