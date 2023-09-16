@@ -128,9 +128,7 @@ const slides = (
     <div className="slide">
       <img src={require("../assets/testImg/partner3.png")} alt="" />
     </div>
-    <div className="slide">
-      <img src={require("../assets/testImg/partner4.png")} alt="" />
-    </div>
+    <div className="slide"></div>
     <div className="slide">
       <img src={require("../assets/testImg/partner5.png")} alt="" />
     </div>
