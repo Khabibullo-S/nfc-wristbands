@@ -13,11 +13,8 @@ import Wpsay from "../component/wpsay";
 import VideoPanel from "../component/videoPanel";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE, USER_CONTACT } from "../utils/consts";
 import { Link } from "react-router-dom";
-import { message  } from "antd";
-import {
-  faqLangs,
-  newHomeLangs,
-} from "../utils/multiLang";
+import { message } from "antd";
+import { faqLangs, newHomeLangs } from "../utils/multiLang";
 import Faq from "../component/faq";
 import WOW from "wow.js/dist/wow.js";
 import "animate.css";
@@ -201,17 +198,17 @@ const Home = () => {
   const handleYournameChange = (event) => {
     setYournameInput(event.target.value);
   };
-const sendNameInput = () => {
-  if (yournameInput === '' || !yournameInput){
+  const sendNameInput = () => {
+    if (yournameInput === "" || !yournameInput) {
       messageApi.open({
-          type: "error",
-          content: "username is required",
+        type: "error",
+        content: "username is required",
       });
-  }else {
-    localStorage.setItem('name',yournameInput)
-    window.location.assign('/registration')
-  }
-}
+    } else {
+      localStorage.setItem("name", yournameInput);
+      window.location.assign("/registration");
+    }
+  };
   useEffect(() => {
     // save pageLang to localStorage under "language" key
     localStorage.setItem("language", pageLang);
@@ -272,7 +269,7 @@ const sendNameInput = () => {
 
   return (
     <>
-        {contextHolder}
+      {contextHolder}
       <div className="Home">
         <div className="Home-container">
           {/* NAVBAR */}
@@ -876,14 +873,14 @@ const sendNameInput = () => {
                 >
                   {newHomeLangs.pricingSection.pricingSwitch.yearly[pageLang]}
                 </div>
-                <div
+                {/* <div
                   className={`pricing-switch-btn ${
                     priceTime === "lifetime" ? "active" : ""
                   }`}
                   onClick={() => setPriceTime("lifetime")}
                 >
                   {newHomeLangs.pricingSection.pricingSwitch.lifetime[pageLang]}
-                </div>
+                </div> */}
               </div>
               <div className="pricing-plans">
                 <div className="pricing-plan  wow animate__animated animate__slideInLeft">
