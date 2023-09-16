@@ -416,7 +416,7 @@ export const newHomeLangs = {
     infoTitle: {
       uz: "Raqamli profilingizni bir tugmani bosish orqali <span>ulaning va ulashing!</span>",
       en: "Connect and share your digital profile with a <span>single tap!</span>",
-      ru: "Подключайтесь и делитесь своим цифровым профилем <span>одним нажатием!</span>",
+      ru: "Подключайтесь и делитесь своим цифровым профилем <span>одним касанием!</span>",
     },
     infoText: {
       uz: "Bizning mahsulotlarimiz o'zingiz haqingizdagi barcha kerakli ma'lumotlarni boshqalar bilan baham ko'rish yo'lingizni soddalashtirish uchun mo'ljallangan.",
@@ -438,7 +438,7 @@ export const newHomeLangs = {
     headerTitle: {
       uz: "Bizga ishonadigan sanoat peshqadamlari",
       en: "Trusted by industry leaders",
-      ru: "Доверяющие лидеры отрасли",
+      ru: "Нам доверяют",
     },
     headerText: {
       uz: "Siz bir zumda to'liq profilingizni baham ko'rishingiz mumkin, bu esa tarmoqli ishlashni va boshqalar bilan bog'lanishni osonlashtiradi",
@@ -478,8 +478,8 @@ export const newHomeLangs = {
         },
         infoText: {
           uz: "Keraksiz qog'oz biznes kartalari bilan xayrlashing va barqarorlik inqilobiga qo'shiling. Bizning mahsulotimiz bilan siz o'zingizning profil ma'lumotlaringizni darhol ulashishingiz mumkin, bu sizning onlayn faoliyatingizni ekologiyaga zararsiz va samarali qiladi.",
-          en: "Say goodbye to unnecessary paper business cards and join the sustainability revolution. With our product, you can instantly share your profile information, making your online experience green and efficient.",
-          ru: "Попрощайтесь с ненужными бумажными визитками и присоединитесь к революции устойчивого развития. С помощью нашего продукта вы можете мгновенно обмениваться информацией своего профиля. Делая работу в сети экологичной и эффективной.",
+          en: "Say goodbye to unnecessary paper business cards and join the sustainability revolution. With our product, you can instantly share your profile information.",
+          ru: "Попрощайтесь с ненужными бумажными визитками и присоединитесь к революции устойчивого развития. С помощью нашего продукта вы можете мгновенно обмениваться информацией своего профиля.",
         },
       },
       {
