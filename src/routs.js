@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ADMIN_ROUTE,
-
   EDIT_ALL_USER,
   GET_ORDERS,
   HOME_ROUTE,
@@ -14,7 +13,10 @@ import {
   REGISTRATION_ROUTE,
   STATISTIC,
   USER_LIST,
-  NEW_HOME_ROUTE, THEME_USER, THEME_COMPANY, ANALYTICS_USER, ANALYTICS_COMPANY, // new home
+  THEME_USER,
+  THEME_COMPANY,
+  ANALYTICS_USER,
+  ANALYTICS_COMPANY,
 } from "./utils/consts";
 import Admin from "./pages/admin/admin";
 import Home from "./pages/home";
@@ -29,7 +31,6 @@ import AdminProfile from "./pages/admin/admin/adminProfile";
 import EditAllUser from "./pages/admin/admin/editAllUser";
 import Statistics from "./pages/admin/admin/statistics";
 import PolyGetAll from "./pages/admin/polygraph/polyGetAll";
-import NewHome from "./pages/newHome";
 import UserTheme from "./pages/admin/user/userTheme";
 import CompanyTheme from "./pages/admin/company/companyTheme";
 import UserAnalytics from "./pages/admin/user/userAnalytics";
@@ -49,7 +50,6 @@ export const publicRoute = [
     path: REGISTRATION_ROUTE,
     Component: <Registration />,
   },
-  { path: NEW_HOME_ROUTE, Component: <NewHome /> },
 ];
 
 export const adminDash = [

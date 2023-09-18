@@ -187,12 +187,12 @@ export const faqLangs = {
   faqs: {
     uz: [
       {
-        question: "What's a Site? UZ",
+        question: "What's a Site?",
         answer:
           "UZ Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit",
       },
       {
-        question: "What can I link to on my Site? UZ",
+        question: "What can I link to on my Site?",
         answer:
           "UZ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
@@ -281,12 +281,12 @@ export const faqLangs = {
     ],
     ru: [
       {
-        question: "What's a Site? RU",
+        question: "What's a Site?",
         answer:
           "RU Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit",
       },
       {
-        question: "What can I link to on my Site? RU",
+        question: "What can I link to on my Site?",
         answer:
           "RU Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },

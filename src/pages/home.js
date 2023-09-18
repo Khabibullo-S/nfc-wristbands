@@ -209,6 +209,7 @@ const Home = () => {
       window.location.assign("/registration");
     }
   };
+
   useEffect(() => {
     // save pageLang to localStorage under "language" key
     localStorage.setItem("language", pageLang);
@@ -267,9 +268,34 @@ const Home = () => {
   /* for price switch */
   const [priceTime, setPriceTime] = useState("monthly"); // can be "monthly", "yearly", "lifetime"
 
+  // toggle tutorial video section
+  const [showTutorial, setShowTutorial] = useState(false);
+  const handleTutorialToggle = (event) => {
+    // Stop the propagation of the click event to prevent conflicts
+    // event.stopPropagation();
+    setShowTutorial(!showTutorial);
+  };
+  useEffect(() => {
+    document.body.classList.toggle("no-scroll", showTutorial);
+  }, [showTutorial]);
+
   return (
     <>
       {contextHolder}
+      {showTutorial ? (
+        <div className="Home-tutorial-section" onClick={handleTutorialToggle}>
+          <iframe
+            className="tutorial-iframe"
+            src="https://www.youtube.com/embed/XavmjZs7co4?si=7mHs6tgN7mpFArXn"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="Home">
         <div className="Home-container">
           {/* NAVBAR */}
@@ -394,17 +420,23 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="hero-btns">
-                  <div className="download-btn second-btn-style">
+                  <Link
+                    to={REGISTRATION_ROUTE}
+                    className="download-btn second-btn-style"
+                  >
                     {newHomeLangs.heroSection.getStarted[pageLang]}
-                  </div>
-                  <div className="demo-btn first-btn-style">
+                  </Link>
+                  <div
+                    className="demo-btn first-btn-style"
+                    onClick={handleTutorialToggle}
+                  >
                     {newHomeLangs.heroSection.watchVideo[pageLang]}
                   </div>
                 </div>
               </div>
               <div className="hero-right">
-                <div className="big-card-img-container second-color-bg border-r-64px">
-                  <img src={require("../assets/img/wristband.png")} alt="" />
+                <div className="big-card-img-container border-r-64px">
+                  <img src={require("../assets/testImg/gif1.gif")} alt="" />
                 </div>
               </div>
             </div>
@@ -612,12 +644,8 @@ const Home = () => {
             <div className="features-cards">
               <div className="big-card main-color-bg  wow animate__animated animate__slideInLeft">
                 <div className="big-card-left">
-                  <div className="big-card-img-container second-color-bg border-r-64px">
-                    <img
-                      className=""
-                      src={require("../assets/img/wristband.png")}
-                      alt=""
-                    />
+                  <div className="big-card-img-container border-r-64px">
+                    <img src={require("../assets/testImg/gif2.gif")} alt="" />
                   </div>
                 </div>
                 <div className="big-card-right">
@@ -639,8 +667,8 @@ const Home = () => {
               </div>
               <div className="big-card sc-theme-main-color-bg  wow animate__animated animate__slideInLeft">
                 <div className="big-card-left">
-                  <div className="big-card-img-container sc-theme-second-color-bg border-r-64px">
-                    <img src={require("../assets/img/wristband.png")} alt="" />
+                  <div className="big-card-img-container border-r-64px">
+                    <img src={require("../assets/testImg/gif3.gif")} alt="" />
                   </div>
                 </div>
                 <div className="big-card-right">
@@ -662,8 +690,11 @@ const Home = () => {
               </div>
               <div className="big-card trd-theme-main-color-bg  wow animate__animated animate__slideInLeft">
                 <div className="big-card-left">
-                  <div className="big-card-img-container trd-theme-second-color-bg border-r-64px">
-                    <img src={require("../assets/img/wristband.png")} alt="" />
+                  <div className="big-card-img-container border-r-64px">
+                    <img
+                      src={require("../assets/testImg/wristbandTypes.jpg")}
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div className="big-card-right">
@@ -954,9 +985,12 @@ const Home = () => {
                       )
                     )}
                   </div>
-                  <div className="pricing-start-btn first-btn-style">
+                  <Link
+                    to={REGISTRATION_ROUTE}
+                    className="pricing-start-btn first-btn-style"
+                  >
                     {newHomeLangs.pricingSection.pricingBtns.free[pageLang]}
-                  </div>
+                  </Link>
                 </div>
                 <div className="pricing-plan  wow animate__animated animate__slideInLeft">
                   <div className="pricing-plan-price">
@@ -1041,9 +1075,12 @@ const Home = () => {
                       )
                     )}
                   </div>
-                  <div className="pricing-start-btn second-btn-style">
+                  <Link
+                    to={REGISTRATION_ROUTE}
+                    className="pricing-start-btn second-btn-style"
+                  >
                     {newHomeLangs.pricingSection.pricingBtns.premium[pageLang]}
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1093,16 +1130,19 @@ const Home = () => {
                 </div>
               </div>
               <div className="start-btns">
-                <div className="start-btn second-btn-style">
+                <Link to={LOGIN_ROUTE} className="start-btn second-btn-style">
                   {
                     newHomeLangs.getStartedSection.getStartedBtns.download[
                       pageLang
                     ]
                   }
-                </div>
-                <div className="start-btn first-btn-style">
+                </Link>
+                <Link
+                  to={REGISTRATION_ROUTE}
+                  className="start-btn first-btn-style"
+                >
                   {newHomeLangs.getStartedSection.getStartedBtns.demo[pageLang]}
-                </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -46,6 +46,7 @@
     "react-select": "^5.7.4",
     "react-slick": "^0.29.0",
     "react-three-fiber": "^6.0.13",
+    "react-youtube": "^10.1.0",
     "sass": "^1.45.1",
     "slick-carousel": "^1.8.1",
     "vcard-creator": "^0.6.0",

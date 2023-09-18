@@ -6,6 +6,10 @@ body {
 
 /************************************************* SECONDARY CSS *************************************************************/
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .Home .second-color-font {
   color: var(--second-color);
 }
@@ -149,7 +153,7 @@ body {
 /* Select a select element with name="select" */
 .select {
   position: absolute;
-  z-index: 1000;
+  z-index: 2 !important;
   overflow: visible;
   width: max-content;
   max-width: fit-content;
@@ -279,20 +283,22 @@ body {
   }
 }
 
-.Home .big-card-img-container img {
+.Home .big-card-img-container > * {
   max-height: 576px;
   width: auto;
+  border-radius: 64px;
 }
 
 @media screen and (max-width: 1439px) {
-  .Home .big-card-img-container img {
+  .Home .big-card-img-container > * {
     max-height: 400px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .Home .big-card-img-container img {
+  .Home .big-card-img-container > * {
     max-height: 300px;
+    border-radius: 32px;
   }
 }
 
@@ -337,6 +343,37 @@ body {
   justify-content: center;
   width: 100%;
   max-width: 1440px;
+}
+
+/* TUTORIAL VIDEO SECTION */
+.Home-tutorial-section {
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Home-tutorial-section .tutorial-iframe {
+  width: 1120px;
+  height: 630px;
+}
+
+@media screen and (max-width: 1250px) {
+  .Home-tutorial-section .tutorial-iframe {
+    width: 560px;
+    height: 315px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Home-tutorial-section .tutorial-iframe {
+    width: 560px;
+    height: 315px;
+  }
 }
 
 /* NAVBAR */
@@ -595,7 +632,7 @@ body {
 .Home .hero-btns {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
 }
 
