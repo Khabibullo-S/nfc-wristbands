@@ -1,6 +1,8 @@
 import { React, useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import VCard from "vcard-creator";
+import logo from "../assets/img/logo.png";
+import overlay from "../assets/img/card-bg.png";
 import "../assets/css/Contact.css";
 import { $host } from "../http";
 import { HOME_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
@@ -880,6 +882,8 @@ const UserPageContact = (comingProps) => {
         if (item.theme === data.theme) {
           return (
             <div className="User-page-contact" key={index}>
+              <img className="contactOverlay" src={overlay} alt="?" />
+              <img className="contactOverlay2" src={overlay} alt="?" />
               <>{showShare ? shareContactContent : <></>}</>
               <div className="contact">
                 {/* key={props.id}  */}
@@ -891,35 +895,36 @@ const UserPageContact = (comingProps) => {
                     className="container"
                     style={{ background: item.color1 }}
                   >
-                    <>
+                    <div className="contactTop">
+                      <img className="contactLogo" src={logo} alt="logo" />
                       <div
                         className="threeDots"
                         style={showShare ? { opacity: "0" } : {}}
                       >
                         <div
                           onClick={(event) => handleShareToggle(event)}
-                          style={{ background: item.color2 }}
+                          style={{ background: "#fff" }}
                         >
                           <svg width="16" height="16" viewBox="0 0 16 16">
                             <path
-                              fill={item.color1}
-                              stroke={item.color1}
+                              fill="#A8A8A8"
+                              stroke="#A8A8A8"
                               d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"
                             ></path>
                             <path
-                              fill={item.color1}
-                              stroke={item.color1}
+                              fill="#A8A8A8"
+                              stroke="#A8A8A8"
                               d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"
                             ></path>
                             <path
-                              fill={item.color1}
-                              stroke={item.color1}
+                              fill="#A8A8A8"
+                              stroke="#A8A8A8"
                               d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"
                             ></path>
                           </svg>
                         </div>
                       </div>
-                    </>
+                    </div>
 
                     <div
                       className="contact-top"
@@ -976,9 +981,12 @@ const UserPageContact = (comingProps) => {
                         onClick={() => handleNavBtnClick("1")}
                         style={
                           activeNav === "1"
-                            ? activeNavCss
+                            ? {
+                                background: "#313131",
+                                color: "#fff",
+                              }
                             : {
-                                background: "transparent",
+                                background: "#F2F2F2",
                                 color: item.textColor,
                               }
                         }
@@ -992,9 +1000,12 @@ const UserPageContact = (comingProps) => {
                         onClick={() => handleNavBtnClick("2")}
                         style={
                           activeNav === "2"
-                            ? activeNavCss
+                            ? {
+                                background: "#313131",
+                                color: "#fff",
+                              }
                             : {
-                                background: "transparent",
+                                background: "#F2F2F2",
                                 color: item.textColor,
                               }
                         }

@@ -7,6 +7,7 @@ import "../../../assets/css/userProfile.css";
 
 const UserProfile = () => {
   const [currentUser, setCurrentUser] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
   const [messageApi, contextHolder] = message.useMessage();
 
   const [sendProf, setSendProf] = useState({
@@ -27,6 +28,8 @@ const UserProfile = () => {
       region: "",
       country: "",
     },
+    linkedin: "",
+    image: null,
   });
 
   let dataIndex = {
@@ -41,6 +44,7 @@ const UserProfile = () => {
     birthday: sendProf.birthday ? sendProf.birthday : currentUser.birthday,
     created_by_id: currentUser.created_by_id,
     theme: currentUser.theme,
+    linkedin: sendProf.linkedin,
     work_info: {
       org: sendProf.work_info
         ? sendProf.work_info.org
@@ -69,11 +73,14 @@ const UserProfile = () => {
         "api/v1/users/" + localStorage.getItem("uuid")
       );
       setCurrentUser(res.data);
+      setSelectedFile(res.image);
     };
     getData();
   }, []);
 
   const handleSend = async () => {
+    const formData = new FormData();
+    formData.append("image", selectedFile);
     if (sendProf.password === "") {
       messageApi.open({
         type: "error",
@@ -83,7 +90,15 @@ const UserProfile = () => {
       try {
         const res = await $authHost.patch(
           "api/v1/users/" + localStorage.getItem("uuid") + "/",
-          dataIndex
+          {
+            ...dataIndex,
+            image: formData.get("image"),
+          },
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
         );
         messageApi.open({
           type: "success",
@@ -100,8 +115,6 @@ const UserProfile = () => {
       }
     }
   };
-
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -209,13 +222,13 @@ const UserProfile = () => {
             </FloatingLabel>
           </Col>
         </Row>
-        <Row className='profile_image'>
+        <Row className="profile_image">
           <Col>
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Profile Image</Form.Label>
               <Form.Control type="file" onChange={handleFileChange} />
             </Form.Group>
-            <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button>
+            {/* <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button> */}
           </Col>
         </Row>
         <Row>
@@ -232,6 +245,26 @@ const UserProfile = () => {
                 placeholder={`email:${currentUser.email}`}
                 onChange={(e) =>
                   setSendProf({ ...sendProf, email: e.target.value })
+                }
+                style={{ overflow: "hidden" }}
+              />
+            </FloatingLabel>
+          </Col>
+        </Row>
+        <Row>
+          <Col style={{ marginTop: "20px" }}>
+            <Form.Label htmlFor="basic-url">Linkedin</Form.Label>
+            <FloatingLabel
+              controlId="floatingInput"
+              label={`${currentUser.linkedin ? currentUser.linkedin : ""}`}
+              className="mb-4"
+              style={{ overflow: "hidden" }}
+            >
+              <Form.Control
+                type="text"
+                placeholder={`linkedin:${currentUser?.linkedin}`}
+                onChange={(e) =>
+                  setSendProf({ ...sendProf, linkedin: e.target.value })
                 }
                 style={{ overflow: "hidden" }}
               />

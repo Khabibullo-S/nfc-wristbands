@@ -9,7 +9,9 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
   BgColorsOutlined,
+  LinkedinOutlined,
 } from "@ant-design/icons";
+
 import {
   EDIT_ALL_USER,
   GET_ORDERS,
@@ -317,8 +319,17 @@ const Admin = observer(() => {
                     </div>
                     <div className="admin__card-photo">
                       <div className="admin__card-circle">
-                        {photoDataUrl ? (
-                          <img src={photoDataUrl} alt="Selected" />
+                        {User.image ? (
+                          <img
+                            style={{
+                              objectPosition: "center",
+                              objectFit: "cover",
+                              width: "100%",
+                              height: "100%",
+                            }}
+                            src={User.image}
+                            alt="Selected"
+                          />
                         ) : (
                           <span>
                             {User.first_name ? User.first_name[0] : "B"}
@@ -410,6 +421,13 @@ const Admin = observer(() => {
                             <div>
                               <p>Email</p>
                               {User.email ? User.email : "add email"}
+                            </div>
+                          </div>
+                          <div className="card__info-email card__inner-info">
+                            <LinkedinOutlined />
+                            <div>
+                              <p>LinkedIn</p>
+                              {User.linkedin ? User.linkedin : "add linkedIn"}
                             </div>
                           </div>
                         </div>

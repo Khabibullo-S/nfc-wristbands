@@ -507,9 +507,9 @@
   .admin__card-copyURL {
     display: none;
   }
-  .profile_image {
+  /* .profile_image {
     display: none !important;
-  }
+  } */
 }
 @media screen and (min-width: 992px) /* and (max-width: 1200px) */ {
   .admin__container {
