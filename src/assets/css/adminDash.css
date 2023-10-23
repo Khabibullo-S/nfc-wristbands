@@ -72,10 +72,25 @@
   height: 500px;
   border-radius: 15px;
   margin: 10px;
-  display: grid;
-  grid-template-rows: 1fr 0.2fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
+
+.admin__blanc-header {
+  width: 150px;
+  height: auto;
+  margin-top: 15px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin__blanc-header img {
+  width: 100%;
+  height: auto;
+}
+
 .admin__card-copyURL {
   position: absolute;
   top: 40px;
@@ -98,7 +113,6 @@
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 .admin__card-info {
-  background: #000;
   color: white;
   display: flex;
   align-items: flex-start;
@@ -106,6 +120,17 @@
   padding: 30px 10px 10px 20px;
   position: relative;
   border-radius: 0 0 15px 15px;
+  height: 100%;
+  z-index: 1;
+  background-image: url("../img/card-bg.png");
+  background-position: right center;
+}
+.admin__card-info-img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 .admin__card-contact {
 }
@@ -176,16 +201,16 @@
 }
 
 .admin__card-circle {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: #898989;
+  background: #d9d9d9;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 28px;
-  border: 5px solid #898989;
+  border: 5px solid #d9d9d9;
   overflow: hidden;
   position: relative;
 }
@@ -193,6 +218,7 @@
 .admin__card-circle img {
   max-width: 100%;
   max-height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
   position: relative;
@@ -203,8 +229,8 @@
 .admin__card-circle::after {
   content: " ";
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 5px solid white;
   z-index: 0;
@@ -225,7 +251,7 @@
 .card__line {
   width: 200px;
   height: 2px;
-  background: #000;
+  background: #fff;
   margin-top: 15px;
   position: absolute;
   border-radius: 2px;
@@ -329,6 +355,7 @@
 
 .sidebar__navigation ul {
   padding-left: 0;
+  -webkit-padding-start: 0;
   padding-inline-start: 0;
 }
 @media screen and (max-width: 992px) {
@@ -510,6 +537,7 @@
     grid-template-columns: 1fr; */
   }
   .sidebar-admin {
+    position: -webkit-sticky;
     position: sticky;
     /* position: fixed; */
     background: #fff;

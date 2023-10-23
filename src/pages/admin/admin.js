@@ -1,14 +1,14 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import "../../assets/css/adminDash.css";
-import {Routes, Route, NavLink} from "react-router-dom";
-import {observer} from "mobx-react-lite";
-import {$authHost, useTokenRefresh} from "../../http";
-import {adminRoute, companyRoute, polyRoute, userRoute} from "../../routs";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { $authHost, useTokenRefresh } from "../../http";
+import { adminRoute, companyRoute, polyRoute, userRoute } from "../../routs";
 import {
-    PieChartOutlined,
-    UsergroupAddOutlined,
-    UserOutlined,
-    BgColorsOutlined,
+  PieChartOutlined,
+  UsergroupAddOutlined,
+  UserOutlined,
+  BgColorsOutlined,
 } from "@ant-design/icons";
 import {
   EDIT_ALL_USER,
@@ -40,6 +40,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, message, Space } from "antd";
 import ClipboardJS from "clipboard";
+import logo from "../../assets/img/logo.png";
+import bg from "../../assets/img/card-bg.png";
 
 const Admin = observer(() => {
   // <<<<<<< HEAD
@@ -52,35 +54,35 @@ const Admin = observer(() => {
       color1: "#fff",
       color2: "#000",
       textColor: "#000",
-      textColor2: "#fff",
+      textColor2: "#FFFFFF",
     },
     {
       theme: "greenBlack",
-      color1: "#7dba28",
+      color1: "#fff",
       color2: "#000",
-      textColor: "#fff",
-      textColor2: "#fff",
+      textColor: "#000",
+      textColor2: "#FFFFFF",
     },
     {
       theme: "blackGreen",
-      color1: "#000",
+      color1: "#fff",
       color2: "#7dba28",
-      textColor: "#fff",
-      textColor2: "#fff",
+      textColor: "#000",
+      textColor2: "#FFFFFF",
     },
     {
       theme: "blackGold",
-      color1: "#000",
+      color1: "#fff",
       color2: "#d4af37",
-      textColor: "#fff",
-      textColor2: "#fff",
+      textColor: "#000",
+      textColor2: "#FFFFFF",
     },
     {
       theme: "blackPink",
-      color1: "#000",
+      color1: "#fff",
       color2: "#d4a",
-      textColor: "#fff",
-      textColor2: "#fff",
+      textColor: "#000",
+      textColor2: "#FFFFFF",
     },
   ];
 
@@ -309,131 +311,149 @@ const Admin = observer(() => {
                   className="admin__blanc"
                   style={{ background: item.color1, color: item.textColor }}
                 >
-                  <div className="admin__card-photo">
-                    <div className="admin__card-circle">
-                      {photoDataUrl ? (
-                        <img src={photoDataUrl} alt="Selected" />
-                      ) : (
-                        <span>
-                          {User.first_name ? User.first_name[0] : "B"}
-                        </span>
-                      )}
+                  <div style={{ height: "40%", paddingBottom: 15 }}>
+                    <div className="admin__blanc-header">
+                      <img src={logo} alt="logo" />
                     </div>
-                    <div className="admin__card-fullName">
-                      {/* <input placeholder="Full name" type="text"/> */}
-                      <div className="admin__card-names">
-                        {User.first_name ? (
-                          <div>
-                            {User.first_name} {User.last_name}
-                          </div>
+                    <div className="admin__card-photo">
+                      <div className="admin__card-circle">
+                        {photoDataUrl ? (
+                          <img src={photoDataUrl} alt="Selected" />
                         ) : (
-                          <p>Loading...</p>
+                          <span>
+                            {User.first_name ? User.first_name[0] : "B"}
+                          </span>
                         )}
                       </div>
-                    </div>
-                  </div>
-                  <div className="admin__card-about">
-                    <div className="admin__contact-navbar">
-                      <div
-                        onClick={() => handleNavBtnClick("1")}
-                        style={
-                          activeNav === "1"
-                            ? activeNavCss
-                            : { background: "transparent" }
-                        }
-                        className={`${
-                          activeNav === "1" ? "active-nav" : ""
-                        } navbar-btn`}
-                      >
-                        <span>Contact</span>
-                      </div>
-                      <div
-                        onClick={() => handleNavBtnClick("2")}
-                        style={
-                          activeNav === "2"
-                            ? activeNavCss
-                            : { background: "transparent" }
-                        }
-                        className={`${
-                          activeNav === "2" ? "active-nav" : ""
-                        } navbar-btn`}
-                      >
-                        <span>Company</span>
-                      </div>
-                      <div
-                        onClick={() => handleNavBtnClick("3")}
-                        style={
-                          activeNav === "3"
-                            ? activeNavCss
-                            : { background: "transparent" }
-                        }
-                        className={`${
-                          activeNav === "3" ? "active-nav" : ""
-                        } navbar-btn`}
-                      >
-                        <span>Address</span>
+                      <div className="admin__card-fullName">
+                        {/* <input placeholder="Full name" type="text"/> */}
+                        <div className="admin__card-names">
+                          {User.first_name ? (
+                            <div>
+                              {User.first_name} {User.last_name}
+                            </div>
+                          ) : (
+                            <p>Loading...</p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="admin__card-info"
-                    style={{ background: item.color2, color: item.textColor2 }}
-                  >
-                    {activeNav === "1" && (
-                      <div className="admin__card-contact card__about">
-                        <div className="card__info-phone card__inner-info">
-                          <FontAwesomeIcon icon={faPhone} size="lg" />
-                          <div>
-                            <p>Mobile Phone</p>
-                            {User.phone ? User.phone : "add phone"}
-                            <div className="card__line"></div>
-                          </div>
+                  <div style={{ height: "100%", marginTop: 10 }}>
+                    <div className="admin__card-about">
+                      <div className="admin__contact-navbar">
+                        <div
+                          onClick={() => handleNavBtnClick("1")}
+                          style={
+                            activeNav === "1"
+                              ? activeNavCss
+                              : { background: "transparent" }
+                          }
+                          className={`${
+                            activeNav === "1" ? "active-nav" : ""
+                          } navbar-btn`}
+                        >
+                          <span>Contact</span>
                         </div>
-                        <div className="card__info-email card__inner-info">
-                          <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                          <div>
-                            <p>Email</p>
-                            {User.email ? User.email : "add email"}
-                          </div>
+                        <div
+                          onClick={() => handleNavBtnClick("2")}
+                          style={
+                            activeNav === "2"
+                              ? activeNavCss
+                              : { background: "transparent" }
+                          }
+                          className={`${
+                            activeNav === "2" ? "active-nav" : ""
+                          } navbar-btn`}
+                        >
+                          <span>Company</span>
                         </div>
-                      </div>
-                    )}
-                    {activeNav === "2" && (
-                      <div className="admin__card-company card__about">
-                        <div className="card__info-organization card__inner-info">
-                          <FontAwesomeIcon icon={faBuilding} size="lg" />
-                          <div>
-                            <p>Company</p>
-                            {User.work_info.org
-                              ? User.work_info.org
-                              : "add info"}
-                            <div className="card__line"></div>
-                          </div>
-                        </div>
-                        <div className="card__info-role card__inner-info">
-                          <FontAwesomeIcon icon={faUserTie} size="lg" />
-                          <div>
-                            <p>Profession</p>
-                            {User.work_info.role
-                              ? User.work_info.role
-                              : "add info"}
-                          </div>
+                        <div
+                          onClick={() => handleNavBtnClick("3")}
+                          style={
+                            activeNav === "3"
+                              ? activeNavCss
+                              : { background: "transparent" }
+                          }
+                          className={`${
+                            activeNav === "3" ? "active-nav" : ""
+                          } navbar-btn`}
+                        >
+                          <span>Address</span>
                         </div>
                       </div>
-                    )}
-                    {activeNav === "3" && (
-                      <div className="admin__card-address card__about">
-                        <div className="card__info-adress card__inner-info">
-                          <FontAwesomeIcon icon={faMapLocationDot} size="lg" />
-                          <div>
-                            <p>Address</p>
-                            {User.address !== null
-                              ? `${User.address.country} ${User.address.city} ${User.address.region} ${User.address.street}`
-                              : "add address"}
+                    </div>
+                    <div
+                      className="admin__card-info"
+                      style={{
+                        background: item.color2,
+                        color: item.textColor2,
+                      }}
+                    >
+                      <img
+                        className="admin__card-info-img"
+                        src={bg}
+                        alt="bg-logo"
+                      />
+                      {activeNav === "1" && (
+                        <div className="admin__card-contact card__about">
+                          <div className="card__info-phone card__inner-info">
+                            <FontAwesomeIcon icon={faPhone} size="lg" />
+                            <div>
+                              <p>Mobile Phone</p>
+                              {User.phone ? User.phone : "add phone"}
+                              <div className="card__line"></div>
+                            </div>
+                          </div>
+                          <div className="card__info-email card__inner-info">
+                            <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                            <div>
+                              <p>Email</p>
+                              {User.email ? User.email : "add email"}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    )}
+                      )}
+                      {activeNav === "2" && (
+                        <div className="admin__card-company card__about">
+                          <div className="card__info-organization card__inner-info">
+                            <FontAwesomeIcon icon={faBuilding} size="lg" />
+                            <div>
+                              <p>Company</p>
+                              {User.work_info.org
+                                ? User.work_info.org
+                                : "add info"}
+                              <div className="card__line"></div>
+                            </div>
+                          </div>
+                          <div className="card__info-role card__inner-info">
+                            <FontAwesomeIcon icon={faUserTie} size="lg" />
+                            <div>
+                              <p>Profession</p>
+                              {User.work_info.role
+                                ? User.work_info.role
+                                : "add info"}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      {activeNav === "3" && (
+                        <div className="admin__card-address card__about">
+                          <div className="card__info-adress card__inner-info">
+                            <FontAwesomeIcon
+                              icon={faMapLocationDot}
+                              size="lg"
+                            />
+                            <div>
+                              <p>Address</p>
+                              {User.address !== null
+                                ? `${User.address.country} ${User.address.city} ${User.address.region} ${User.address.street}`
+                                : "add address"}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
