@@ -7,6 +7,7 @@ import "../../../assets/css/userProfile.css";
 
 const UserProfile = () => {
   const [currentUser, setCurrentUser] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
   const [messageApi, contextHolder] = message.useMessage();
 
   const [sendProf, setSendProf] = useState({
@@ -28,6 +29,7 @@ const UserProfile = () => {
       country: "",
     },
     linkedin: "",
+    image: null,
   });
 
   let dataIndex = {
@@ -71,11 +73,14 @@ const UserProfile = () => {
         "api/v1/users/" + localStorage.getItem("uuid")
       );
       setCurrentUser(res.data);
+      setSelectedFile(res.image);
     };
     getData();
   }, []);
 
   const handleSend = async () => {
+    const formData = new FormData();
+    formData.append("image", selectedFile);
     if (sendProf.password === "") {
       messageApi.open({
         type: "error",
@@ -85,7 +90,15 @@ const UserProfile = () => {
       try {
         const res = await $authHost.patch(
           "api/v1/users/" + localStorage.getItem("uuid") + "/",
-          dataIndex
+          {
+            ...dataIndex,
+            image: formData.get("image"),
+          },
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
         );
         messageApi.open({
           type: "success",
@@ -102,8 +115,6 @@ const UserProfile = () => {
       }
     }
   };
-
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -217,7 +228,7 @@ const UserProfile = () => {
               <Form.Label>Profile Image</Form.Label>
               <Form.Control type="file" onChange={handleFileChange} />
             </Form.Group>
-            <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button>
+            {/* <Button onClick={savePhotoToLocalStorage}>Добавить фото</Button> */}
           </Col>
         </Row>
         <Row>

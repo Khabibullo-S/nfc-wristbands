@@ -320,7 +320,16 @@ const Admin = observer(() => {
                     <div className="admin__card-photo">
                       <div className="admin__card-circle">
                         {User.image ? (
-                          <img src={User.image} alt="Selected" />
+                          <img
+                            style={{
+                              objectPosition: "center",
+                              objectFit: "cover",
+                              width: "100%",
+                              height: "100%",
+                            }}
+                            src={User.image}
+                            alt="Selected"
+                          />
                         ) : (
                           <span>
                             {User.first_name ? User.first_name[0] : "B"}
