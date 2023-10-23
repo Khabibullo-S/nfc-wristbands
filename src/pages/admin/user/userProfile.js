@@ -27,6 +27,7 @@ const UserProfile = () => {
       region: "",
       country: "",
     },
+    linkedin: "",
   });
 
   let dataIndex = {
@@ -41,6 +42,7 @@ const UserProfile = () => {
     birthday: sendProf.birthday ? sendProf.birthday : currentUser.birthday,
     created_by_id: currentUser.created_by_id,
     theme: currentUser.theme,
+    linkedin: sendProf.linkedin,
     work_info: {
       org: sendProf.work_info
         ? sendProf.work_info.org
@@ -209,7 +211,7 @@ const UserProfile = () => {
             </FloatingLabel>
           </Col>
         </Row>
-        <Row className='profile_image'>
+        <Row className="profile_image">
           <Col>
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Profile Image</Form.Label>
@@ -232,6 +234,26 @@ const UserProfile = () => {
                 placeholder={`email:${currentUser.email}`}
                 onChange={(e) =>
                   setSendProf({ ...sendProf, email: e.target.value })
+                }
+                style={{ overflow: "hidden" }}
+              />
+            </FloatingLabel>
+          </Col>
+        </Row>
+        <Row>
+          <Col style={{ marginTop: "20px" }}>
+            <Form.Label htmlFor="basic-url">Linkedin</Form.Label>
+            <FloatingLabel
+              controlId="floatingInput"
+              label={`${currentUser.linkedin ? currentUser.linkedin : ""}`}
+              className="mb-4"
+              style={{ overflow: "hidden" }}
+            >
+              <Form.Control
+                type="text"
+                placeholder={`linkedin:${currentUser?.linkedin}`}
+                onChange={(e) =>
+                  setSendProf({ ...sendProf, linkedin: e.target.value })
                 }
                 style={{ overflow: "hidden" }}
               />
