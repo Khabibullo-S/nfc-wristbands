@@ -111,7 +111,7 @@
   }
 
   .contact-info {
-    padding-top: 70px!important;
+    padding-top: 70px !important;
     background-color: #7dba28 !important;
   }
 
@@ -121,6 +121,12 @@
   .item-text a span {
     color: #fff !important;
   }
+}
+
+.linkedinSvg {
+  display: flex;
+  margin-left: 4px;
+  scale: 1.4;
 }
 
 .contact-top {
@@ -244,7 +250,6 @@
   color: var(--contact-text-secondary-color);
   box-sizing: border-box;
   max-width: 100%;
-  height: 250px;
   padding: 1.5rem;
 }
 

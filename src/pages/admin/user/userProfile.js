@@ -80,7 +80,12 @@ const UserProfile = () => {
 
   const handleSend = async () => {
     const formData = new FormData();
-    formData.append("image", selectedFile);
+    const data = {...dataIndex}
+    if (selectedFile instanceof File){
+      formData.append("image", selectedFile);
+      data.image = formData.get("image")
+   }
+
     if (sendProf.password === "") {
       messageApi.open({
         type: "error",
@@ -90,10 +95,7 @@ const UserProfile = () => {
       try {
         const res = await $authHost.patch(
           "api/v1/users/" + localStorage.getItem("uuid") + "/",
-          {
-            ...dataIndex,
-            image: formData.get("image"),
-          },
+          data,
           {
             headers: {
               "Content-Type": "multipart/form-data",

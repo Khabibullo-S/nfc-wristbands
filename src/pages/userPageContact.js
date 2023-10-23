@@ -6,6 +6,7 @@ import overlay from "../assets/img/card-bg.png";
 import "../assets/css/Contact.css";
 import { $host } from "../http";
 import { HOME_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
+import { LinkedinOutlined } from "@ant-design/icons";
 
 const themes = {
   whiteBlack: {
@@ -337,6 +338,19 @@ const UserPageContact = (comingProps) => {
       ) : (
         <></>
       )}
+      {data.linkedin ? (
+        <div className="contact-info-item">
+          <div className="linkedinSvg">
+            <LinkedinOutlined />
+          </div>
+          <div className="item-text">
+            <span className="info-label">LinkedIn</span>
+            <a>
+              <span>{data.linkedin.substring(0,20)+ "..."}</span>
+            </a>
+          </div>
+        </div>
+      ) : null}
     </>
   );
   const companyContent = (

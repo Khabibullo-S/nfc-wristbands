@@ -427,7 +427,7 @@ const Admin = observer(() => {
                             <LinkedinOutlined />
                             <div>
                               <p>LinkedIn</p>
-                              {User.linkedin ? User.linkedin : "add linkedIn"}
+                              {User.linkedin ? User.linkedin.substring(0,20)+ "..." : "add linkedIn"}
                             </div>
                           </div>
                         </div>
