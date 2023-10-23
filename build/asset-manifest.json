@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b189d86.css",
+    "main.js": "/static/js/main.6b6a7d0c.js",
+    "static/media/gif1.gif": "/static/media/gif1.28e08741107594f7b34b.gif",
+    "static/media/gif3.gif": "/static/media/gif3.41cb6f67d68ac6f19be9.gif",
+    "static/media/gif2.gif": "/static/media/gif2.ad61a5606299252cb545.gif",
+    "static/media/wristbandTypes.jpg": "/static/media/wristbandTypes.6fe8a9c9da7c49eab348.jpg",
+    "static/media/wristband.png": "/static/media/wristband.43d17f0c4cb929c14127.png",
+    "static/media/nfc-logo.png": "/static/media/nfc-logo.191ef6f648c9e299cb30.png",
+    "static/media/partner3.png": "/static/media/partner3.a3007f19ded38abcd1a7.png",
+    "static/media/partner2.png": "/static/media/partner2.0bef7be6bbee6125e808.png",
+    "static/media/partner4.png": "/static/media/partner4.eddf595aebfe3edee5ca.png",
+    "static/media/partner1.png": "/static/media/partner1.e18945f4e39946d95d46.png",
+    "static/media/partner5.png": "/static/media/partner5.d52253e5f8eedd246eab.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.1b189d86.css.map": "/static/css/main.1b189d86.css.map",
+    "main.6b6a7d0c.js.map": "/static/js/main.6b6a7d0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b189d86.css",
+    "static/js/main.6b6a7d0c.js"
+  ]
+}

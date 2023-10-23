@@ -931,13 +931,17 @@ const UserPageContact = (comingProps) => {
                       style={{ background: item.color1 }}
                     >
                       <div className="contact-header">
-                        {/* <img className="contact-img" src={props.avatar} /> */}
-                        <div className="contact-initials">
-                          <div>
-                            {data.first_name && data.first_name[0]}
-                            {data.last_name && data.last_name[0]}
+                        {data.image ? (
+                          <img className="contact-img" src={data.image} />
+                        ) : (
+                          <div className="contact-initials">
+                            <div>
+                              {data.first_name && data.first_name[0]}
+                              {data.last_name && data.last_name[0]}
+                            </div>
                           </div>
-                        </div>
+                        )}
+
                         <div
                           className="contact-name"
                           style={{ color: item.textColor }}
