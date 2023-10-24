@@ -61,7 +61,7 @@ const UserProfile = () => {
       region: sendProf.address.region
         ? sendProf.address.region
         : currentUser?.address?.region,
-      country: sendProf.address.address
+      country: sendProf.address.country
         ? sendProf.address.country
         : currentUser?.address?.country,
     },
