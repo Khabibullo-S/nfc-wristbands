@@ -328,7 +328,7 @@ const UserPageContact = (comingProps) => {
                   " " +
                   data.address.city +
                   " " +
-                  data.address.region +
+                  (data.address.region ? data.address.region : "") +
                   " " +
                   data.address.street}
               </span>
