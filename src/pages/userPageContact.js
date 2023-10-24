@@ -1,7 +1,7 @@
 import { React, useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import VCard from "vcard-creator";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/logo.svg";
 import overlay from "../assets/img/card-bg.png";
 import "../assets/css/Contact.css";
 import { $host } from "../http";
@@ -325,10 +325,10 @@ const UserPageContact = (comingProps) => {
             <a>
               <span>
                 {data.address.country +
-                  " " +
+                  ", " +
                   data.address.city +
-                  " " +
-                  (data.address.region ? data.address.region : "") +
+                  ", " +
+                  (data.address.region ? data.address.region + ", " : "") +
                   " " +
                   data.address.street}
               </span>
