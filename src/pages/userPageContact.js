@@ -394,7 +394,7 @@ const UserPageContact = (comingProps) => {
           ></path>
         </svg>
         <div className="item-text">
-          <span className="info-label">Profession</span>
+          <span className="info-label">Position</span>
           <span>{data.work_info && data.work_info.role}</span>
         </div>
       </div>
