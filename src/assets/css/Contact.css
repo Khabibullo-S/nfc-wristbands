@@ -41,10 +41,11 @@
   }
 
   .contact-top {
-    margin-bottom: 100px !important;
+    margin-bottom: 65px !important;
   }
 
   .contactLogo {
+    margin-top: 55px!important;
     margin-left: 0 !important;
     margin-bottom: 30px;
   }
@@ -338,7 +339,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--contact-secondary-color);
 }
 .threeDots div:hover {
   filter: brightness(95%);
