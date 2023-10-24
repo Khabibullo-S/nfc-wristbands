@@ -80,7 +80,8 @@
 }
 
 .contact-box {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
   z-index: 0;
   display: flex;
@@ -91,7 +92,10 @@
   min-width: 50%;
   min-height: fit-content;
   background-color: var(--contact-secondary-color, #fff);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 16px rgba(199, 86, 86, 0.1);
+}
+.card__inner-info a {
+  color: inherit;
 }
 
 @media screen and (max-width: 750px) {

@@ -50,6 +50,8 @@ const Admin = observer(() => {
   const [currentUser, setCurrentUser] = useState([]);
   const [User, setUser] = useState({});
   const [activeNav, setActiveNav] = useState("1");
+  const [photoDataUrl, setPhotoDataUrl] = useState("");
+
   const listTheme = [
     {
       theme: "whiteBlack",
@@ -89,23 +91,22 @@ const Admin = observer(() => {
   ];
 
   // photoImageUpload
-  const [photoDataUrl, setPhotoDataUrl] = useState("");
 
-  useEffect(() => {
-    // Получите данные изображения из Local Storage
-    const storedPhoto = localStorage.getItem("selectedPhoto");
+  // useEffect(() => {
+  //   // Получите данные изображения из Local Storage
+  //   const storedPhoto = localStorage.getItem("selectedPhoto");
 
-    if (storedPhoto) {
-      setPhotoDataUrl(storedPhoto);
-    }
-  }, []);
+  //   if (storedPhoto) {
+  //     setPhotoDataUrl(storedPhoto);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    const storedPhoto = localStorage.getItem("photo");
-    if (storedPhoto) {
-      setPhotoDataUrl(storedPhoto);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedPhoto = localStorage.getItem("photo");
+  //   if (storedPhoto) {
+  //     setPhotoDataUrl(storedPhoto);
+  //   }
+  // }, []);
 
   const handleNavBtnClick = (key) => {
     setActiveNav(key);
@@ -119,6 +120,7 @@ const Admin = observer(() => {
         );
         setCurrentUser([res.data]);
         setUser(res.data);
+        setPhotoDataUrl(res.image)
       };
       if (token) {
         getData();
@@ -410,8 +412,8 @@ const Admin = observer(() => {
                         <div className="admin__card-contact card__about">
                           <div className="card__info-phone card__inner-info">
                             <FontAwesomeIcon icon={faPhone} size="lg" />
-                            <div>
-                              <p>Mobile Phone</p>
+                            <div >
+                              <a style={{display: "block"}} href={"tel:+" + User.phone}>Mobile Phone</a>
                               {User.phone ? User.phone : "add phone"}
                               <div className="card__line"></div>
                             </div>
@@ -419,14 +421,14 @@ const Admin = observer(() => {
                           <div className="card__info-email card__inner-info">
                             <FontAwesomeIcon icon={faEnvelope} size="lg" />
                             <div>
-                              <p>Email</p>
-                              {User.email ? User.email : "add email"}
+                              <a style={{display: "block"}} href={`mailto:${User.email}`}>Email</a>
+                              {User.email ? User.email : "add email"}<div className="card__line"></div>
                             </div>
                           </div>
                           <div className="card__info-email card__inner-info">
                             <LinkedinOutlined />
                             <div>
-                              <p>LinkedIn</p>
+                              <a style={{display: "block"}} href={User.linkedin}>LinkedIn</a>
                               {User.linkedin ? User.linkedin.substring(0,20)+ "..." : "add linkedIn"}
                             </div>
                           </div>

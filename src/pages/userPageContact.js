@@ -290,7 +290,7 @@ const UserPageContact = (comingProps) => {
           </svg>
           <div className="item-text">
             <span className="info-label">Email</span>
-            <a>
+            <a href={`mailto:${data.email}`} >
               <span>{data.email}</span>
             </a>
           </div>
@@ -345,7 +345,7 @@ const UserPageContact = (comingProps) => {
           </div>
           <div className="item-text">
             <span className="info-label">LinkedIn</span>
-            <a>
+            <a href={data.linkedin} target="_blank">
               <span>{data.linkedin.substring(0,20)+ "..."}</span>
             </a>
           </div>
