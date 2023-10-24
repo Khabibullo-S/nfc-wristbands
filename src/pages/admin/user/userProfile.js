@@ -19,14 +19,14 @@ const UserProfile = () => {
     phone: "",
     birthday: "",
     work_info: {
-      org: "",
-      role: "",
+      org: null,
+      role: null,
     },
     address: {
-      city: "",
-      street: "",
-      region: "",
-      country: "",
+      city: null,
+      street: null,
+      region: null,
+      country: null,
     },
     linkedin: "",
     image: null,
@@ -46,24 +46,24 @@ const UserProfile = () => {
     theme: currentUser.theme,
     linkedin: sendProf.linkedin,
     work_info: {
-      org: sendProf.work_info
+      org: sendProf.work_info.org
         ? sendProf.work_info.org
-        : currentUser.work_info.org,
-      role: sendProf.work_info
+        : currentUser?.work_info?.org,
+      role: sendProf.work_info.role
         ? sendProf.work_info.role
-        : currentUser.work_info.role,
+        : currentUser?.work_info?.role,
     },
     address: {
-      city: sendProf.address ? sendProf.address.city : currentUser.address.city,
-      street: sendProf.address
+      city: sendProf.address.city ? sendProf.address.city : currentUser?.address?.city,
+      street: sendProf.address.street
         ? sendProf.address.street
-        : currentUser.address.street,
-      region: sendProf.address
+        : currentUser?.address?.street,
+      region: sendProf.address.region
         ? sendProf.address.region
-        : currentUser.address.region,
-      country: sendProf.address
+        : currentUser?.address?.region,
+      country: sendProf.address.address
         ? sendProf.address.country
-        : currentUser.address.country,
+        : currentUser?.address?.country,
     },
   };
 
@@ -73,6 +73,7 @@ const UserProfile = () => {
         "api/v1/users/" + localStorage.getItem("uuid")
       );
       setCurrentUser(res.data);
+      console.log(res.data);
       setSelectedFile(res.image);
     };
     getData();
@@ -80,11 +81,18 @@ const UserProfile = () => {
 
   const handleSend = async () => {
     const formData = new FormData();
-    const data = {...dataIndex}
-    if (selectedFile instanceof File){
+    const data = { ...dataIndex }
+    if (selectedFile instanceof File) {
       formData.append("image", selectedFile);
       data.image = formData.get("image")
-   }
+    }
+
+    data.work_info = new Blob([JSON.stringify(data.work_info)], {
+      type: "application/json",
+    });
+    data.address = new Blob([JSON.stringify(data.address)], {
+      type: "application/json",
+    });
 
     if (sendProf.password === "") {
       messageApi.open({
@@ -320,18 +328,16 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${
-                currentUser.work_info ? currentUser.work_info.org : ""
-              }`}
+              label={`${currentUser.work_info ? currentUser.work_info.org : ""
+                }`}
               required
               className="mb-4"
               style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`Organization:${
-                  currentUser.work_info ? currentUser.work_info.org : ""
-                }`}
+                placeholder={`Organization:${currentUser.work_info ? currentUser.work_info.org : ""
+                  }`}
                 onChange={(e) => {
                   setSendProf({
                     ...sendProf,
@@ -347,18 +353,16 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${
-                currentUser.work_info ? currentUser.work_info.role : ""
-              }`}
+              label={`${currentUser.work_info ? currentUser.work_info.role : ""
+                }`}
               required
               className="mb-4"
               style={{ overflow: "hidden" }}
             >
               <Form.Control
                 type="text"
-                placeholder={`Role: ${
-                  currentUser.work_info ? currentUser.work_info.role : ""
-                }`}
+                placeholder={`Role: ${currentUser.work_info ? currentUser.work_info.role : ""
+                  }`}
                 onChange={(e) => {
                   setSendProf({
                     ...sendProf,
@@ -376,17 +380,15 @@ const UserProfile = () => {
 
             <FloatingLabel
               controlId="floatingInput"
-              label={`${
-                currentUser.work_info ? currentUser.address.country : ""
-              }`}
+              label={`${currentUser.work_info ? currentUser.address.country : ""
+                }`}
               required
               className="mb-4"
             >
               <Form.Control
                 type="text"
-                placeholder={`Country: ${
-                  currentUser.work_info ? currentUser.address.country : ""
-                }`}
+                placeholder={`Country: ${currentUser.work_info ? currentUser.address.country : ""
+                  }`}
                 onChange={(e) =>
                   setSendProf((prevState) => ({
                     ...prevState,
@@ -412,9 +414,8 @@ const UserProfile = () => {
             >
               <Form.Control
                 type="text"
-                placeholder={`City: ${
-                  currentUser.address ? currentUser.address.city : ""
-                }`}
+                placeholder={`City: ${currentUser.address ? currentUser.address.city : ""
+                  }`}
                 onChange={(e) =>
                   setSendProf((prevState) => ({
                     ...prevState,
@@ -440,9 +441,8 @@ const UserProfile = () => {
             >
               <Form.Control
                 type="text"
-                placeholder={`Region: ${
-                  currentUser.address ? currentUser.address.region : ""
-                }`}
+                placeholder={`Region: ${currentUser.address ? currentUser.address.region : ""
+                  }`}
                 onChange={(e) =>
                   setSendProf((prevState) => ({
                     ...prevState,
@@ -466,9 +466,8 @@ const UserProfile = () => {
             >
               <Form.Control
                 type="text"
-                placeholder={`Street: ${
-                  currentUser.address ? currentUser.address.street : ""
-                }`}
+                placeholder={`Street: ${currentUser.address ? currentUser.address.street : ""
+                  }`}
                 onChange={(e) =>
                   setSendProf((prevState) => ({
                     ...prevState,
