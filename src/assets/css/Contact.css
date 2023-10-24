@@ -45,7 +45,7 @@
   }
 
   .contactLogo {
-    margin-top: 55px!important;
+    margin-top: 55px !important;
     margin-left: 0 !important;
     margin-bottom: 30px;
   }
@@ -116,7 +116,7 @@
   }
 
   .contact-info {
-    padding-top: 70px !important;
+    padding-top: 30px !important;
     background-color: #7dba28 !important;
   }
 
@@ -184,6 +184,7 @@
 .contact-name {
   text-align: center;
   font-size: 30px;
+  line-height: 35px;
 }
 
 .contact-top .button-box {
